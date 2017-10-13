@@ -1,0 +1,11 @@
+<?= $this->Html->script('../front_end/comment-reply.min.js'); ?>
+<?= $this->Html->script('../front_end/jquery.fitvids.js'); ?>
+<?= $this->Html->script('../front_end/jquery.magnific-popup.js'); ?>
+<?= $this->Html->script('../front_end/slick.min.js'); ?>
+<?= $this->Html->script('../front_end/jquery.mixitup.min.js'); ?>
+<?= $this->Html->script('../front_end/mogul-framework-blog.js'); ?>
+<?= $this->Html->script('../front_end/mogul-framework.js'); ?>
+<?= $this->Html->script('../front_end/streama.js'); ?>
+<?= $this->Html->script('../front_end/wp-embed.min.js'); ?>
+<?= $this->Html->script('../front_end/js/slick.min.js'); ?>
+<?= $this->Html->script('../front_end/js/main.js'); ?>
