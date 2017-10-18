@@ -1,0 +1,189 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 25, 2017, 4:05:25 PM
+    Author     : om
+*/
+
+.breadcrumb {
+    display: none;
+}
+.logo {
+    margin: 0 !important;
+}
+/*.logo img {
+    width: 190px !important;
+    margin-left: 10px !important;
+}*/
+.logo img {
+    width: 160px !important;
+    margin-left: 10px !important;
+    margin-top: 7px !important;
+}
+/*.logo {
+    margin: 0 !important;
+}
+.logo img {
+    width: auto !important;
+}*/
+
+.gallery-img {
+    max-width: 360px;
+    max-height: 200px;
+}
+
+.img-container{
+    max-height: 100px;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.img-container .img{
+    max-height: inherit;
+    width: auto;
+}
+
+.sidebar_head_text {
+    padding: 10px 15px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.img-small{
+    max-width: 50px !important;
+    height: auto !important;
+}
+
+.btn{
+    /*color: #fff !important;*/
+}
+.image-profile img {
+    width: auto !important;
+    max-height: 220px !important;
+}
+.form-group {
+    min-height: 20px;
+}
+.img-medium{
+    width: auto !important;
+    max-height: 220px !important;
+}
+/*.discussion_container {
+    display: inline-block;
+    max-height: 300px;
+    overflow: auto;
+}*/
+
+label[for="old_password"],
+label[for="new_password"],
+label[for="confirm_password"]{
+    display: none !important;
+}
+label.error{
+    display: inline-block !important;
+}
+.sidebar-menu {
+    margin-top: 15px;
+}
+
+.header-left{
+    background-color: #354052;
+    width: 265px;
+}
+.wrapper #header {
+    background-color: #fff;
+    border-bottom: 2px solid #ccc;
+}
+
+body {
+    background: RGB(246,247,251)! important;
+    color: #8A95A5;    
+}
+.wrapper .content{
+    border-top: 3px solid #fff;
+}
+.left-menu-toggle i, .right-menu-toggle i {
+    font-size: 33px;
+    vertical-align: middle;
+}
+.logo img {
+    width: 160px !important;
+    margin-left: 10px !important;
+    margin-top: 10px !important;
+    margin-bottom: 6px;
+}
+@media (max-width: 479px) {
+    .header-left {
+        width: 100%; }
+}
+/*.site-content-title {
+    background: #efefef;
+    overflow: hidden;
+}*/
+#sidebar.custom-sidebar .sidebar-menu.custom-sidebar-menu .site-menu > li:hover,
+#sidebar.custom-sidebar .sidebar-menu.custom-sidebar-menu .site-menu > li.active {
+    background-color: #2f3949;
+    border-left: 4px solid rgb(83, 170, 224);
+}
+#sidebar.custom-sidebar .sidebar-menu.custom-sidebar-menu .site-menu li a:hover,
+#sidebar.custom-sidebar .sidebar-menu.custom-sidebar-menu .site-menu li a.active {
+    /*    background-color: #2f3949;
+        border-left: 4px solid rgb(83, 170, 224);*/
+}
+#timeline {   
+    width: 100%;
+}
+.center_img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.media-gallery .dropify-render img{
+    width: auto;
+}
+.media-gallery .dropify-wrapper {
+    max-width: 250px;
+    margin: 0 auto;
+}
+.custom-sidebar .menu-title .main-menu li:before,
+.custom-sidebar .menu-title .main-menu li:after{
+    display: none;
+}
+.custom-sidebar .menu-title .main-menu {
+    padding-bottom: 0;
+}
+.custom-sidebar .sidebar-menu.custom-sidebar-menu .site-menu li {
+    padding-left: 0 !important;
+}
+
+.custom-sidebar .menu-title .main-menu {
+    padding-left: 0 !important;
+}
+body:not(.nav-menu-icon) .site-menu .sub-item.active .sub-menu {
+    padding: 0 0 0 20px;
+}
+body:not(.nav-menu-icon) .site-menu .sub-item.active .sub-menu li::after{
+    display: none;
+}
+
+.custom-sidebar .menu-title > i,
+.custom-sidebar .menu-title > span{
+    display: none;
+}
+.custom-sidebar .menu-title::after {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #333;
+    content: "";
+    padding: 0px 0;
+    /* left: 0; */
+}
+@media (min-width: 479px){
+    .left-menu-toggle{
+        display: none;
+    }
+}

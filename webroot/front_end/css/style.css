@@ -1,0 +1,1367 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+	font-family: Cocogoose;
+}
+html,
+body { height: 100% }
+body {
+	font-family: TitilliumWeb-Regular;
+	color: #525252;
+        font-size: 16px;
+}
+a:hover { text-decoration: none }
+
+/* Remove Chrome Input Field's Unwanted Yellow Background Color */
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/* Install Fonts */
+@font-face {
+    font-family: Cocogoose;
+    src: url(../fonts/Cocogoose.ttf);
+}
+
+@font-face {
+    font-family: TitilliumWeb-Regular;
+    src: url(../fonts/TitilliumWeb-Regular.ttf);
+}
+
+@font-face {
+    font-family: TitilliumWeb-Bold;
+    src: url(../fonts/TitilliumWeb-Bold.ttf);
+}
+
+
+/* Header Area CSS */
+.header-top-section {
+	width: 100%;
+	background: #1A3147;
+	color: #ffffff;
+	font-size: 17px;
+}
+
+.header-top-items {
+	float: right;
+}
+
+.header-top-single-item {
+	display: inline-block;
+	padding: 8px 0px;
+}
+
+.header-top-single-item:first-child {
+	margin-right: 40px;
+}
+
+.text-red {
+	color: #E51F44;
+}
+
+.header-bottom-section {
+	background: #ffffff;
+	padding: 15px 0px;
+	width: 100%;
+	display: inline-block;
+	vertical-align:top;
+}
+
+.header-bottom-section.with-shadow {
+	-moz-box-shadow:	0 5px 5px rgba(182, 182, 182, 0.75);
+	-webkit-box-shadow:	0 5px 5px rgba(182, 182, 182, 0.75);
+	box-shadow:	0 5px 5px rgba(182, 182, 182, 0.75);
+}
+
+.header-logo {
+	display: inline-block;
+}
+
+.header-logo img {
+	max-width: 100px;
+	width: 100%;
+}
+
+.main-nav {
+	float: right;
+	font-family: Cocogoose;
+}
+
+.main-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.main-nav ul li {
+	float: left;
+	padding: 24px 18px;
+}
+
+.main-nav ul li:last-child {
+	padding-right: 0px;
+}
+
+.main-nav ul li a {
+	color: #1A3147;
+}
+
+/*.main-nav ul li.active a {
+	color: #ffffff;
+	background: #EC3D56;
+	padding: 4px 10px;
+	border-radius: 15px;
+}*/
+
+
+
+/* Showcase Section CSS */
+.showcase-section {
+	width: 100%;
+	background-image: url(img/dark-bg.png);
+	background-color: #1A3147;
+	padding: 80px 0px 60px;
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+}
+
+.showcase-heading {
+	font-size: 28px;
+	line-height: 35px;
+	font-family: TitilliumWeb-Regular;
+	color: #ffffff;
+	font-weight: 700;
+	margin-top: 20px;
+}
+
+.showcase-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+	color: #EC3D56;
+	margin-bottom: 30px;
+}
+
+.showcase-btn {
+	font-size: 16px;
+	background: #EC3D56;
+	padding: 10px 30px;
+	border-radius: 25px;
+	color: #ffffff;
+	border: none;
+	font-weight: 700;
+	font-family: TitilliumWeb-Regular;
+	letter-spacing: 1px;
+}
+
+.showcase-img {
+	width: 100%;
+}
+
+
+
+/* Graphics Zoo Section CSS */
+.graphics-zoo-section {
+	width: 100%;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	padding: 50px 0px 10px;
+	background-position: 100% 143%;
+}
+
+.heading-primary {
+	text-align: center;
+	font-size: 24px;
+	color: #1A3147;
+	font-weight: 300;
+	margin-bottom: 20px;
+}
+
+.heading-primary:before {
+	content: "";
+	position: absolute;
+	width: 180px;
+	height: 3px;
+	background: #E51F44;
+	top: 60px;
+	left: 50%;
+	margin-left: -90px;
+}
+
+.graphics-zoo-item {
+	margin-top: 20px;
+	width: 80%;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+}
+
+.graphics-zoo-item img {
+	vertical-align: middle;
+}
+
+
+
+/* How It Work Section CSS */
+.how-it-work-section {
+	width: 100%;
+	background-color: #E9F7FF;
+	padding: 60px 0px 50px;
+}
+
+.para-primary {
+	font-size: 18px;
+	color: #1A3147;
+}
+
+.para-primary-white {
+	font-size: 18px;
+	color: #ffffff;
+	margin-bottom: 0px;
+}
+
+.how-it-work-section .para-primary  {
+	margin: 25px 0px 35px;
+}
+
+.heading-secondary {
+	font-family: TitilliumWeb-Bold;
+	font-size: 18px;
+	color: #1A3147;
+	font-weight: 700;
+	margin-bottom: 15px;
+	
+}
+
+.how-it-work-item-icon {
+	width: 25%;
+	float: left;
+}
+
+.how-it-work-item-icon img {
+	margin-right: 20%;
+	margin-top: 25px;
+}
+
+.how-it-work-item-number {
+	width: 8%;
+	float: left;
+}
+
+.how-it-work-item-number span {
+	background: #1A3147;
+	border-radius: 50%;
+	color: #ffffff;
+	padding: 0px 7px;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.how-it-work-item-text {
+	width: 67%;
+	float: left;
+	padding-right: 30px;
+}
+
+.how-it-work-item-text p {
+	color: #5B707C;
+}
+
+
+
+/* Portfolio CSS */
+.portfolio-header {
+	width: 100%;
+	padding: 60px 0px 0px;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	background-position: 100% 58%;
+}
+
+.portfolio-header .para-primary  {
+	margin: 25px 0px 15px;
+}
+
+.portfolio-body {
+	width: 100%;
+}
+
+.slick-slide img {
+	width: 100%;
+	height: 500px;
+}
+
+.portfolio-items-wrapper {
+	position: relative;
+}
+
+.slick-slide .portfolio-items-wrapper:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+}
+
+.slick-slide.slick-current.slick-center .portfolio-items-wrapper:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: none;
+}
+
+.slick-next {
+    right: 25px;
+    z-index: 1000;
+	height: auto;
+	width: auto;
+}
+
+.slick-prev {
+    left: 25px;
+    z-index: 1000;
+	height: auto;
+	width: auto;
+}
+
+.slick-next::before {
+    font-family: FontAwesome;
+	content: "\f105";
+	font-size: 40px;
+	background: #FFFFFF;
+	opacity: 1;
+	padding: 2px 15px;
+	border-radius: 30px;
+	color: #EC3D56;
+}
+
+.slick-prev::before {
+    font-family: FontAwesome;
+	content: "\f104";
+	font-size: 40px;
+	background: #FFFFFF;
+	opacity: 1;
+	padding: 2px 15px;
+	border-radius: 30px;
+	color: #EC3D56;
+}
+
+
+
+/* Services Section CSS */
+.services-section {
+	width: 100%;
+	background-color: #E9F7FF;
+	padding: 60px 0px 50px;
+}
+
+.services-section .para-primary  {
+	margin: 25px 0px 0px;
+}
+
+.services-item-wrapper {
+	margin-top: 20px;
+	width: 100%;
+	height: 150px;
+	line-height: 150px;
+}
+
+.services-item-wrapper img {
+	vertical-align: middle;
+}
+
+.services-item p {
+    width: 250px;
+    margin: 0 auto;
+    padding: 5px 12px;
+}
+
+
+
+/* Try Graphics Section CSS */
+.try-graphics-dark-section {
+	width: 100%;
+	background: #1A3147;
+	padding: 30px 0px 40px;
+}
+
+.try-graphics-light-section {
+	width: 100%;
+	background: #E9F7FF;
+	padding: 30px 0px 40px;
+}
+
+.heading-primary-red {
+	text-align: center;
+	font-size: 24px;
+	color: #E51F44;
+	font-weight: 300;
+}
+
+.try-graphics-section .heading-primary-red {
+	margin-bottom: 30px;
+}
+
+.try-graphics-btn {
+	background: #E51F44;
+	font-size: 14px;
+	padding: 10px 30px;
+	border-radius: 25px;
+	color: #ffffff;
+	border: none;
+	font-weight: 700;
+	font-family: TitilliumWeb-Regular;
+	letter-spacing: 1px;
+}
+
+/* Reviews Section CSS */ 
+.reviews-section {
+	width: 100%;
+	padding: 30px 0px 100px;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	background-position: 100% 58%;
+}
+
+.heading-secondary-red {
+	font-family: TitilliumWeb-Bold;
+	font-size: 18px;
+	color: #E51F44;
+	font-weight: 700;
+	margin-bottom: 15px;
+	
+}
+
+.reviews-section .heading-primary {
+	margin-bottom: 100px;
+}
+
+.reviews-section .carousel-inner img {
+	width: 400px;
+}
+
+.reviews-section .carousel-inner p {
+	margin-bottom: 25px;
+}
+
+.reviews-section .carousel-control.right, .reviews-section .carousel-control.left {
+	background-image: none;
+}
+
+.feature-text {
+	font-family: TitilliumWeb-Regular;
+	font-size: 16px;
+	color: #E51F44;
+}
+
+.carousel-control .glyphicon-menu-right {
+    margin-right: -10px;
+    left: 50%;
+}
+
+.carousel-control .glyphicon-menu-left {
+    margin-left: -10px;
+    right: 50%;
+}
+
+.carousel-control.right {
+	left: 100%;
+}
+
+.carousel-control.left {
+	right: 100%;
+	left: auto;
+}
+
+.carousel-control .glyphicon-menu-left, .carousel-control .glyphicon-menu-right {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+}
+
+.carousel-control .glyphicon-menu-left, .carousel-control .glyphicon-menu-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+}
+
+.carousel-control {
+	opacity: 1;
+	text-shadow: none;
+}
+
+.carousel-control .glyphicon-menu-left, .carousel-control .glyphicon-menu-right {
+    font-size: 40px;
+}
+
+/* Blog Section CSS */
+.blog-section {
+	width: 100%;
+    background-color: #E9F7FF;
+    padding: 60px 0px 50px;
+}
+
+.blog-body {
+	margin-top: 50px;
+}
+
+/* .blog-item {
+	max-width: 300px;
+	width: 100%;
+} */
+
+/* .blog-item-first {
+	float: left;
+} */
+
+.blog-item-second {
+	margin: 0 auto;
+}
+
+.blog-item-third {
+	float: right;
+}
+
+.blog-item img {
+	/* width: 100%; */
+	width:300px;
+	height: 250px;
+	margin-bottom: 25px;
+}
+
+.blog-item p {
+	padding: 0 20px;
+	text-align: justify;
+	margin-bottom: 30px;
+}
+
+.blog-item .heading-secondary-red {
+	text-align: center !important;
+}
+
+.blog-btn {
+	background: #EC3D56;
+	border: none;
+	border-radius: 15px;
+	color: #ffffff;
+	font-family: Cocogoose;
+	padding: 4px 10px;
+	font-size: 12px;
+	display: block;
+	margin: 0 auto;
+}
+
+
+
+/* Footer Area CSS */
+footer {
+	padding: 50px 0px 30px;
+	width: 100%;
+	background-image: url(img/dark-bg.png);
+	background-color: #1A3147;
+	background-position: 100% 60%;
+}
+
+footer p {
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	line-height: 2em;
+}
+
+.heading-footer {
+	font-size: 26px;
+	color: #ffffff;
+	font-weight: 300;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+.footer-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.footer-nav ul li {
+	margin-bottom: 15px;
+}
+
+.footer-nav ul li a {
+	color: #EC3D56;
+	font-weight: 300;
+	font-size: 16px;
+}
+
+.footer-top-wrapper {
+	float: right;
+}
+
+.footer-logo img {
+	width: 160px;
+	margin-bottom: 30px;
+}
+
+.footer-bottom-section {
+	margin-top: 30px;
+}
+
+.footer-right-reserve {
+	padding-top: 50px;
+}
+
+.footer-right-reserve p {
+	font-size: 15px;
+	font-weight: 300;
+	position: relative;
+}
+
+.footer-right-reserve p:before {
+	content: "";
+	position: absolute;
+	width: 200px;
+	height: 2px;
+	background: #E51F44;
+	top: -10px;
+	left: 50%;
+	margin-left: -100px;
+}
+
+.social-icons {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.social-icons li {
+	display: inline-block;
+}
+
+.social-icons li img {
+	width: 25px;
+	margin: 5px;
+}
+
+
+
+/* Pricing Page CSS */
+.pricing-header-section {
+	padding: 40px 0px 35px;
+	width: 100%;
+	background-image: url(img/dark-bg.png);
+	background-color: #1A3147;
+	background-position: 100% 60%;
+}
+
+.pricing-options-section {
+	width: 100%;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	padding: 40px 0px 140px;
+	background-position: 100% 143%;
+}
+
+.bg-red {
+	background: #EC3D56;
+}
+
+.pricing-options-btn-wrapper {
+	display: inline-block;
+	overflow: hidden;
+	border: 1px solid #eee;
+	border-radius: 10px;
+}
+
+.pricing-options-btn {
+	padding: 8px 40px;
+	color: #1A3147;
+	background: #ffffff;
+	display: inline-block;
+	font-size: 15px;
+}
+
+.pricing-options-btn.active {
+	background: #EC3D56;
+	color: #ffffff;
+}
+
+.pricing-plan-wrapper {
+	border-radius: 15px;
+	overflow: hidden;
+	max-width: 450px;
+	width: 100%;
+	margin: 0 auto;
+	margin-top: -70px;
+	margin-bottom: -70px;
+	border: 2px solid #E9F7FF;
+}
+
+.heading-pricing-plan {
+	font-family: TitilliumWeb-Regular;
+	font-size: 22px;
+	color: #ffffff;
+	margin-bottom: 0px;
+}
+
+.pricing-plan-header {
+	width: 100%;
+	background-image: url(img/red-bg.png);
+	background-color: #E94059;
+	padding: 30px 0px 20px;
+	background-position: 100% 143%;
+	color:#ffffff;
+}
+
+.pricing-plan-price {
+	font-size: 60px;
+	font-family: Cocogoose;
+	font-weight: 700;
+	margin-bottom: 0px;
+	line-height: 30px;
+}
+
+.pricing-plan-price span {
+	font-size: 25px;
+}
+
+.pricing-plan-duration {
+	font-size: 16px;
+}
+
+.pricing-plan-body {
+	padding: 50px 0px;
+	background: #ffffff;
+}
+
+.pricing-plan-body img {
+	max-width: 150px;
+	width: 100%;
+	margin-bottom: 60px;
+}
+
+.pricing-plan-feature {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	color: #1A3147;
+}
+
+.pricing-plan-feature li {
+	margin-bottom: 30px;
+}
+
+.pricing-plan-section {
+	background: #E9F7FF;
+}
+
+.pricing-plan-btn {
+    background: #E94059;
+    font-size: 14px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    color: #ffffff;
+    border: none;
+    font-weight: 700;
+    font-family: TitilliumWeb-Regular;
+    letter-spacing: 1px;
+}
+
+.pricing-bottom-section {
+	width: 100%;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	padding: 150px 0px 120px;
+	background-position: 100% 143%;
+}
+
+.pricing-bottom-section span {
+	display: block;
+	color: #1A3147;
+	font-size: 30px;
+	font-family: Cocogoose;
+	font-weight: 700;
+	margin-bottom: 50px;
+}
+
+.pricing-bottom-btn {
+	background: #ffffff;
+	padding: 15px 30px;
+	color: #E94059;
+	font-family: Cocogoose;
+	font-weight: 300;
+	border: 3px solid #E94059;
+	font-size: 25px;
+	border-radius: 50px;
+}
+
+
+
+/* Log In Section CSS */
+.log-in-section {
+	width: 100%;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	padding: 90px 0px 120px;
+	background-position: 100% 143%;
+}
+
+.log-in-section img {
+	max-width: 360px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.log-in-section p {
+	color: #1A3147;
+	font-size: 26px;
+	margin-top: 40px;
+	margin-bottom: 30px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.log-in-section input {
+	padding: 7px 15px;
+	border-radius: 20px;
+	border: 2px solid #EC3D56;
+	max-width: 360px;
+	width: 100%;
+	margin-bottom: 15px;
+	color: #1A3147;
+	font-size: 16px;
+}
+
+.log-in-section a {
+	float: right;
+	margin-top: -12px;
+	margin-right: 12px;
+	font-style: italic;
+	color: #EC3D56;
+}
+
+.log-in-section button, .log-in-section .login-btn {
+	background: #E94059;
+	font-size: 18px;
+	padding: 8px 30px;
+	border-radius: 25px;
+	color: #ffffff;
+	border: none;
+	font-weight: 700;
+	font-family: TitilliumWeb-Regular;
+	letter-spacing: 1px;
+	max-width: 360px;
+	width: 100%;
+	margin-top: 40px;
+}
+
+.log-in-section ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #1A3147;
+  opacity: 1;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.log-in-section ::-moz-placeholder { /* Firefox 19+ */
+  color: #1A3147;
+  opacity: 1;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.log-in-section :-ms-input-placeholder { /* IE 10+ */
+  color: #1A3147;
+  opacity: 1;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.log-in-section :-moz-placeholder { /* Firefox 18- */
+  color: #1A3147;
+  opacity: 1;
+  font-size: 16px;
+  font-style: italic;
+}
+
+
+
+/* Prortfolio Section CSS */
+.portfolio-header-section {
+	padding: 40px 0px 35px;
+	width: 100%;
+	background-image: url(img/dark-bg.png);
+	background-color: #1A3147;
+	background-position: 100% 60%;
+}
+
+.heading-primary-red-large {
+    text-align: center;
+    font-size: 28px;
+    color: #EC3D56;
+    font-weight: 300;
+}
+
+.heading-primary-dark-large {
+    text-align: center;
+    font-size: 28px;
+    color: #1A3147;
+    font-weight: 300;
+}
+
+.portfolio-section {
+	width: 100%;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	padding: 40px 0px 140px;
+	background-position: 100% 143%;
+	background-attachment: fixed;
+	min-height: 620px;
+}
+
+.portfolio-options-btn-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+	margin-bottom: 50px;
+}
+
+.portfolio-options-btn.active {
+    background: #EC3D56;
+    color: #ffffff;
+    border-radius: 1px sol;
+    border-right: 1px solid #999;
+}
+
+.portfolio-options-btn {
+    padding: 8px 20px;
+    color: #1A3147;
+    background: #ffffff;
+    display: inline-block;
+    font-size: 15px;
+	border-right: 1px solid #eeeeee;
+}
+
+.portfolio-options-btn:last-child {
+	border-right: none;
+}
+
+.portfolio-item-wrapper .mix{
+	display: none;
+	padding: 15px;
+	width: 33.3333%;
+	float: left;
+}
+
+
+
+/* Sign Up Section CSS */
+.sign-up-section {
+	width: 100%;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	padding: 90px 0px 120px;
+	background-position: 100% 143%;
+	font-size: 16px;
+	color: #1A3147;
+}
+
+.sign-up-left img {
+	max-width: 350px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: 30%;
+}
+
+.sign-up-form-heading {
+	font-family: TitilliumWeb-Bold;
+	font-size: 24px;
+	color: #1A3147;
+	font-weight: 700;
+	position: relative;
+	margin-bottom: 25px;
+}
+
+.sign-up-form-heading::before {
+    content: "";
+	position: absolute;
+	width: 175px;
+	height: 2px;
+	background: #1A3147;
+	top: 35px;
+	left: 0;
+}
+
+.subscription-plan {
+	margin-bottom: 50px;
+}
+
+.subscription-plan .btn-default {
+    color: #1A3147;
+    background-color: #fff;
+    border-color: #1A3147;
+}
+
+.subscription-plan .btn {
+    border-radius: 25px;
+}
+
+.subscription-plan .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+	width: 100%;
+}
+
+.account-info {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.account-info-inputs-wrapper {
+	display: inline-block;
+	margin-left: -15px;
+	margin-right: -15px;
+	width: 100%;
+}
+
+.account-info-input {
+	width: 50%;
+	float: left;
+	margin-bottom: 15px;
+	padding: 0px 15px;
+}
+
+.sign-up-form-wrapper label {
+	padding: 0px 5px;
+}
+
+.sign-up-form-wrapper input {
+	width: 100%;
+	border-radius: 25px;
+	color: #1A3147;
+    border: 1px solid #1A3147;
+	padding: 5px 15px;
+}
+
+.payment-method {
+	width: 100%;
+	margin-bottom: 40px;
+}
+
+.payment-method-inputs-wrapper {
+	display: inline-block;
+	margin-left: -15px;
+	margin-right: -15px;
+	width: 100%;
+}
+
+.payment-method-input:first-child {
+	width: 50%;
+	float: left;
+	margin-bottom: 15px;
+	padding: 0px 15px;
+}
+
+.payment-method-input:nth-child(2) {
+	width: 28%;
+	float: left;
+	margin-bottom: 15px;
+	padding: 0px 10px;
+}
+
+.payment-method-input:last-child {
+	width: 22%;
+	float: left;
+	margin-bottom: 10px;
+	padding: 0px 10px;
+}
+
+.sign-up-form-bottom {
+	display: inline-block;
+	margin-left: -15px;
+	margin-right: -15px;
+	width: 100%;
+}
+
+.sign-up-form-sumbit {
+	width: 50%;
+	float: left;
+	margin-bottom: 15px;
+	padding: 0px 15px;
+}
+
+.sign-up-form-bottom-image {
+	width: 50%;
+	float: left;
+	margin-bottom: 15px;
+	padding: 0px 15px;
+}
+
+.sign-up-form-sumbit button {
+    background: #E94059;
+    font-size: 18px;
+    padding: 8px 30px;
+    border-radius: 25px;
+    color: #ffffff;
+    border: none;
+    font-weight: 700;
+    font-family: TitilliumWeb-Regular;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.sign-up-form-bottom-image img {
+    max-width: 225px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.sign-up-2 .subscription-plan .btn-default {
+    color: #EC3D56;
+}
+
+.sign-up-2 .subscription-plan .btn-default b {
+    font-weight: 700;
+}
+
+.sign-up-2 .pricing-plan-wrapper {
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 2px solid #E9F7FF;
+    text-align: center;
+	float: left;
+}
+
+.sign-up-2 .pricing-plan-body {
+    padding: 20px 0px;
+}
+
+.sign-up-2 .pricing-plan-body p {
+	margin-bottom: 25px;
+}
+
+.sign-up-2 .pricing-plan-body img {
+    max-width: 120px;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.sign-up-2 .heading-secondary-red {
+    font-size: 26px;
+}
+
+
+
+/* About Page CSS */
+.about-us-header-section {
+	width: 100%;
+	background-image: url(img/red-bg-big.png);
+	background-color: #E94059;
+	padding: 60px 0px 70px;
+	background-position: 100% 143%;
+	color: #ffffff;
+}
+
+.heading-secondary-big {
+    font-family: TitilliumWeb-Bold;
+    font-size: 28px;
+    color: #1A3147;
+    font-weight: 700;
+}
+
+.team-dream-section {
+	width: 100%;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	padding: 40px 0px 50px;
+	background-position: 100% 143%;
+}
+
+.team-dream-section p {
+	text-align: justify;  
+    -moz-text-align-last: center; /* Code for Firefox */
+    text-align-last: center;
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.team-dream-section h3 {
+	margin-bottom: 25px;
+}
+
+.core-value-section {
+	width: 100%;
+	background: #E9F7FF;
+	padding: 40px 0px 50px;
+}
+
+.core-value-section h3 {
+	margin-bottom: 0px;
+}
+
+
+
+/* Blog Page CSS */
+.blog-header-section {
+    width: 100%;
+    background-image: url(img/red-bg-big.png);
+    background-color: #E94059;
+    padding: 40px 0px 50px;
+    background-position: 100% 143%;
+    color: #ffffff;
+}
+
+.blog-post-image img {
+	max-width: 400px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.blog-odd-section {
+	width: 100%;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	padding: 40px 0px 50px;
+	background-position: 100% 143%;
+}
+
+.blog-post {
+    max-width: 350px;
+    width: 100%;
+margin: 0 auto;
+margin-top: 10%;
+}
+
+.blog-post p {
+    padding: 0 20px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.blog-even-section {
+	width: 100%;
+	background: #E9F7FF;
+	padding: 40px 0px 50px;
+	
+}
+
+
+
+/* FAQ CSS */
+.faq-section {
+	width: 100%;
+	background-image: url(img/white-bg.png);
+	background-color: #ffffff;
+	padding: 50px 0px 80px;
+	background-position: 100% 143%;
+	background-attachment: fixed;
+}
+
+.faq-section .panel-group .panel {
+	border-radius: 0;
+	box-shadow: none;
+	border-color: #EEEEEE;
+}
+
+.faq-section .panel-default > .panel-heading {
+	padding: 0;
+	border-radius: 0;
+	color: #212121;
+	background-color: transparent;
+}
+
+.faq-section .panel-title {
+	font-size: 14px;
+}
+
+.faq-section .panel-title > a {
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+}
+
+.faq-section .more-less {
+	float: right;
+	color: #212121;
+}
+
+.faq-section .panel-default > .panel-heading + .panel-collapse > .panel-body {
+	border-top-color: #EEEEEE;
+}
+
+.faq-section .panel.odd {
+	background: #E9F7FF;
+}
+
+.content p,main p{
+    color: #525252;
+}
+.toggle_menu .fa {
+    color: #1a3147;
+}
+/*----media----*/
+
+@media (max-width:767px){
+.log-in-section img {
+    max-width: 70%;
+}
+.reviews-section .carousel-inner img {
+    width: 80%;
+    margin-bottom: 30px;
+}
+.reviews-section .item {
+    text-align: center;
+}
+.pricing-plan-wrapper {
+    margin: 0 auto 40px;
+    margin-top: 0px;
+    margin-bottom: 40px; 
+}
+.pricing-options-section {
+    padding-bottom: 35px;
+}
+}

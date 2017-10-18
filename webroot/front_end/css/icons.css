@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+/* streama */
+@font-face {
+  font-family: "streama";
+  src:url("https://cdn.myfontastic.com/A4oxJEs8hzZSbcxMK6R72j/fonts/1481589710.eot");
+  src:url("https://cdn.myfontastic.com/A4oxJEs8hzZSbcxMK6R72j/fonts/1481589710.eot?#iefix") format("embedded-opentype"),
+    url("https://cdn.myfontastic.com/A4oxJEs8hzZSbcxMK6R72j/fonts/1481589710.woff") format("woff"),
+    url("https://cdn.myfontastic.com/A4oxJEs8hzZSbcxMK6R72j/fonts/1481589710.ttf") format("truetype"),
+    url("https://cdn.myfontastic.com/A4oxJEs8hzZSbcxMK6R72j/fonts/1481589710.svg#1481589710") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  font-family: "streama" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "streama" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+  content: "\61";
+}
+.icon-twitter:before {
+  content: "\63";
+}
+.icon-out:before {
+  content: "\64";
+}
+.icon-share:before {
+  content: "\65";
+}
+.icon-fullscreen:before {
+  content: "\66";
+}
+.icon-scale-down:before {
+  content: "\67";
+}
+.icon-question:before {
+  content: "\68";
+}
+.icon-left:before {
+  content: "\69";
+}
+.icon-right:before {
+  content: "\6a";
+}
+.icon-tick:before {
+  content: "\6b";
+}
+.icon-close:before {
+  content: "\6c";
+}
+.icon-person:before {
+  content: "\6e";
+}
+.icon-play:before {
+  content: "\6f";
+}
+.icon-mini-tiles:before {
+  content: "\70";
+}
+.icon-tiles:before {
+  content: "\72";
+}
+.icon-slide:before {
+  content: "\71";
+}
+.icon-eye:before {
+  content: "\73";
+}
+.icon-up:before {
+  content: "\74";
+}
+.icon-down:before {
+  content: "\75";
+}
+.icon-settings:before {
+  content: "\76";
+}
+.icon-th-list:before {
+  content: "\78";
+}
+.icon-square:before {
+  content: "\77";
+}
+.icon-plus:before {
+  content: "\79";
+}
+.icon-minus:before {
+  content: "\7a";
+}
+.icon-instagram:before {
+  content: "\62";
+}
+.icon-bubble-love-streamline-talk:before {
+  content: "\6d";
+}
+.icon-speech-streamline-talk-user:before {
+  content: "\41";
+}
+.icon-hand-like:before {
+  content: "\42";
+}
+.icon-linearicons:before {
+  content: "\43";
+}
+.icon-ios-color-filter-outline:before {
+  content: "\44";
+}
+.icon-rss:before {
+  content: "\45";
+}
+.icon-pin-map-2:before {
+  content: "\47";
+}
+.icon-block:before {
+  content: "\49";
+}
+.icon-user-times:before {
+  content: "\46";
+}

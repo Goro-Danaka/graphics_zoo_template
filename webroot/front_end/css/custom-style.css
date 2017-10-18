@@ -1,0 +1,160 @@
+.sign-up-form{
+    margin-top:100px;
+}
+.sign-up-form .left-part .pink-part{
+    padding: 20px;
+    color: #fff;
+    /*background: #ff1f8b;*/
+    background: #F23F5B;
+}
+
+.sign-up-form .left-part .pink-part .title-heading{
+    background-image: url('../img/line.png');
+    color: #fff;
+}
+.sign-up-form .left-part .pink-part .title-heading,
+.sign-up-form .left-part .gray-part .title-heading{
+    text-align: center;
+    text-transform: inherit;
+    font-weight: bold;
+    padding-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    margin-bottom: 5px;
+}
+.sign-up-form .left-part .pink-part .dollar-sign{
+    font-size: 20px;
+    top: -13.5px;
+}
+.sign-up-form .left-part .pink-part .subscript{
+    font-size: 20px;
+
+}
+.sign-up-form .left-part .pink-part h2{
+    margin: 0px;
+    color: #fff;
+    text-align: center;
+}
+
+.sign-up-form .left-part .pink-part .list-block{
+    padding: 0px; 
+}
+.sign-up-form .left-part .pink-part .list-block li{
+    line-height: 0px;
+    display: block;
+}
+.sign-up-form .left-part .pink-part .list-block li p{
+    font-size: 18px;
+    color: #fff;
+    margin: 10px;
+}
+.sign-up-form .left-part .pink-part .list-block li .check-icon{
+    /*width: 30px;*/
+    float: left;
+    margin-right: 20px;
+    /*display: block;*/
+}
+.sign-up-form .left-part .pink-part .list-block li  .single-sentence{
+    display: block;
+}
+.sign-up-form .left-part .pink-part .list-block li span{
+    font-size: 30px;
+    color: #fff;
+    vertical-align: text-top;
+}
+
+.sign-up-form .left-part .gray-part{
+    padding: 20px;
+    /*color: #fff;*/
+    background: #f2f2f2;
+}
+.sign-up-form .left-part .gray-part .title-heading{
+    background-image: url('../img/pink-line.jpg');
+    /*color: #ff1f8b;*/
+    color: #F23F5B;
+    margin-top:0px;
+}
+.sign-up-form .left-part .gray-part h5{
+    margin-bottom: 10px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+/*---right-part----*/
+.sign-up-form .right-part{
+    padding: 30px;
+
+}
+.sign-up-form .right-part .account-info .form-title,
+.sign-up-form .right-part .payment-method .form-title{
+    margin: 0px;
+    font-size: 32px;
+}
+.sign-up-form .right-part .account-info hr,
+.sign-up-form .right-part .payment-method hr{
+    margin: 0px;
+}
+.sign-up-form .right-part .single-input label,
+.sign-up-form .right-part .payment-card-part label{
+    font-weight: bold;
+    cursor: default;
+    color: #b0b0b0;
+
+}
+.sign-up-form .right-part .single-input input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #dcdcdc;
+    padding-left: 15px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.sign-up-form .right-part .single-input input:focus{
+    outline: none;
+}
+
+.sign-up-form .right-part .payment-method{
+    margin-top: 10px;
+}
+.sign-up-form .right-part .payment-method .date-cvc-form{
+    padding: 0px;
+}
+
+.sign-up-form .right-part .payment-card-part img{
+    height: 50px;
+}
+.sign-up-form .right-part .payment-card-part .login-btn{
+    float: right;
+    background: #2e3d52;
+    border: none;
+    padding: 10px;
+    height: 60px;
+    /*width: 100px;*/
+    color: #fff;
+    padding: 0px 20px;
+    border-radius: 5px; 
+}
+
+
+@media screen and (max-width: 1024px){
+    .sign-up-form .col-1-4,
+    .sign-up-form .col-3-4 {
+        width: 100%;
+    }
+    .sign-up-form .right-part .single-input{
+        margin-top: 10px;
+    }
+    .sign-up-form .right-part .account-info .form-title,
+    .sign-up-form .right-part .payment-method .form-title,
+    .sign-up-form .right-part .account-info,
+    .sign-up-form .right-part .payment-method,
+    .sign-up-form .right-part .payment-card-part{
+        margin-left: -4%;
+        margin-right: -4%;
+    }
+    .sign-up-form .right-part .payment-method .date-cvc-form{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

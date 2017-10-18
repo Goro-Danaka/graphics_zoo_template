@@ -1,0 +1,98 @@
+#sidebar.custom-sidebar {
+    background-color: #354052;
+}
+
+#sidebar.custom-sidebar .sidebar-menu.custom-sidebar-menu .site-menu li {
+    border-left: 4px solid transparent;
+    padding-left: 6px;
+}
+
+#sidebar.custom-sidebar .sidebar-menu.custom-sidebar-menu .site-menu li:hover,
+#sidebar.custom-sidebar .sidebar-menu.custom-sidebar-menu .site-menu li.active {
+/*    background-color: #2f3949;
+    border-left: 4px solid rgb(83, 170, 224);*/
+}
+
+.sidebar-menu.custom-sidebar-menu .site-menu {
+    border-bottom: 3px solid rgb(48, 58, 74);
+}
+
+.sidebar-menu.custom-sidebar-menu .site-menu li a {
+    color: rgb(160, 171, 191);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.sidebar-menu.custom-sidebar-menu .site-menu li a:hover,
+.sidebar-menu.custom-sidebar-menu .site-menu li.active>a {
+    color: #dadde3;
+}
+
+table.custom-table thead tr th {
+    background-color: #f6fafe;
+    color: #8a95a5;
+    border-right: 1px solid #d7e3f0;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 0;
+}
+
+table.custom-table tbody tr td {
+    color: #8a95a5;
+}
+
+table.custom-table thead tr th:last-child {
+    border-right: 0;
+}
+
+.btn-pigment-green {
+    background-color: rgb(125, 209, 164);
+    border: 1px solid rgb(93, 176, 132);
+    color: #fff;
+    border-radius: 2px;
+}
+
+table.custom-table .sorting:hover:before,
+table.custom-table .sorting:hover:after,
+table.custom-table .sorting_desc:hover:before,
+table.custom-table .sorting_desc:hover:after,
+table.custom-table .sorting_asc:hover:before,
+table.custom-table .sorting_asc:hover:after {
+    opacity: 1;
+    font-size: 18px;
+}
+
+table.custom-table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fff;
+}
+
+table.custom-table.table-striped tbody tr:nth-of-type(even) {
+    background-color: #f6fafe;
+}
+
+.nav-tab-pills-image ul li .nav-link {
+    color: #8a95a5;
+}
+
+.wrapper .nav-tab-pills-image ul li .nav-link.active,
+.wrapper .nav-tab-pills-image ul li .nav-link.active:focus,
+.wrapper .nav-tab-pills-image ul li .nav-link.active:hover,
+.wrapper .nav-tab-pills-image ul li .nav-link:focus,
+.wrapper .nav-tab-pills-image ul li .nav-link:hover {
+    color: #54565e;
+    border-color: transparent transparent rgb(83, 170, 224);
+}
+
+/*********              My Styles              **************/
+
+/*table.custom-table thead tr th:first-child{
+    border-left: 1px solid #d7e3f0;
+}
+
+table.custom-table thead tr th:last-child{
+    border-right: 1px solid #d7e3f0;
+}*/
+table.custom-table{
+    border: 1px solid #d7e3f0;
+    border-radius: 2px;
+}
