@@ -58,8 +58,11 @@
 <!-- plugins js -->
 
 <?= $this->Html->script('/assets/bower_components/popper.js/dist/umd/popper.min.js'); ?>
-
 <?= $this->Html->script('/assets/bower_components/PACE/pace.min.js'); ?>
+
+<?= $this->Html->script('/assets/bower_components/bootstrap/dist/js/bootstrap.js'); ?>
+
+
 <?= $this->Html->script('/assets/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.js'); ?>
 <!-- endbuild -->
 
@@ -69,7 +72,10 @@
 <?= $this->Html->script('/assets/bower_components/nvd3/build/nv.d3.min.js'); ?>
 <?= $this->Html->script('/assets/bower_components/jquery.sparkline/index.js'); ?>
 <?= $this->Html->script('/assets/bower_components/chart.js/dist/Chart.min.js'); ?>
-<?= $this->Html->script('/assets/assets/js/maps/jquery-jvectormap-us-aea.js'); ?>
+<?= $this->Html->script('/assets/bower_components/masonry/dist/masonry.pkgd.min.js'); ?>
+<?= $this->Html->script('/assets/bower_components/imagesloaded/imagesloaded.js'); ?>
+<?= $this->Html->script('/assets/bower_components/photoswipe/dist/photoswipe.js'); ?>
+<?= $this->Html->script('/assets/bower_components/photoswipe/dist/photoswipe-ui-default.min.js'); ?>
 
 <!-- build:js assets/js/app.min.js -->
 <!-- core js -->
@@ -80,7 +86,9 @@
 <?= $this->Html->script('/assets/assets/js/dashboard/dashboard.js'); ?>
 <?= $this->Html->script('/assets/bower_components/datatables/media/js/jquery.dataTables.js'); ?>
 <?= $this->Html->script('/assets/assets/js/table/data-table.js'); ?>
+<?= $this->Html->script('/assets/assets/js/extras/gallery.js'); ?>
 
 
 
 <?= $this->element('custom_js'); ?>
+

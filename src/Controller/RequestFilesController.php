@@ -217,10 +217,10 @@ class RequestFilesController extends AppController {
         if ($this->request->is(['post', 'put'])):
             $file_object = $this->request->getData('file');
             $request_id = $this->request->getData('request_id');
+
             if ($request_id):
 
                 if ($this->uploadRequestFilesCustomer($this->current_user->id, $request_id, $file_object)):
-
                     $this->Flash->success(__('The File is upload successfully.'));
                 else:
                     $this->Flash->error(__('The file not upload. Please, try again.'));
@@ -230,6 +230,26 @@ class RequestFilesController extends AppController {
 
         return $this->redirect($this->referer());
     }
+
+    public function uploadFileTemp() { 	
+
+        if ($this->request->is(['post', 'put'])):
+            $file_object = $this->request->getData('file');
+            $request_id = $this->request->getData('request_id');
+
+            if ($request_id):
+
+                if ($this->uploadRequestTempFiles($this->current_user->id, $request_id, $file_object)):
+                    $this->Flash->success(__('The File is upload successfully.'));
+                else:
+                    $this->Flash->error(__('The file not upload. Please, try again.'));
+                endif;
+            endif;
+        endif;
+        
+        return $this->redirect($this->referer());
+    }
+    
 	
 	public function uploadFileAdmin() {
 

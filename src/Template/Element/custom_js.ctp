@@ -87,7 +87,7 @@ use Cake\Routing\Router;
 
     });
 
-	jQuery(".openfile").click(function(){
+	jQuery('table').on("click" , ".openfile", function(){
 		var extension = jQuery(this).attr('data-extension');
 		var filepath = jQuery(this).attr('data-path');
 		var html = "";

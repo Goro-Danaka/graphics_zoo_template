@@ -45,8 +45,8 @@ use Cake\Routing\Router;
 								<h2 class="heading-footer">Extras</h2>
 								<nav class="footer-nav">
 									<ul>
-										<li><a href="<?= Router::url(['controller' => 'Pages', 'action' => 'login', 'prefix' => NULL], TRUE) ?>">Login</a></li>
-										<li><a href="<?= Router::url(['controller' => 'Pages', 'action' => 'signup', 'prefix' => NULL], TRUE) ?>">Sign-up</a></li>
+										<li><a href="<?= Router::url(['controller' => 'Pages', 'action' => 'login`', 'prefix' => NULL], TRUE) ?>">Login</a></li>
+										<li><a href="<?= Router::url(['controller' => 'Pages', 'action' => 'signup1', 'prefix' => NULL], TRUE) ?>">Sign-up</a></li>
 										<li><a href="<?= Router::url(['controller' => 'Pages', 'action' => 'termsAndConditions', 'prefix' => NULL], TRUE) ?>">Terms and Conditions</a></li>
 										<li><a href="<?= Router::url(['controller' => 'Pages', 'action' => 'privacyPolicy', 'prefix' => NULL], TRUE) ?>">Privacy Policy</a></li>
 									</ul>

@@ -57,6 +57,8 @@
 <?= $this->Html->css('/assets/bower_components/bower-jvectormap/jquery-jvectormap-1.2.2.css'); ?>
 <?= $this->Html->css('/assets/bower_components/nvd3/build/nv.d3.min.css'); ?>
 <?= $this->Html->css('/assets/bower_components/datatables/media/css/jquery.dataTables.css'); ?>
+<?= $this->Html->css('/assets/bower_components/photoswipe/dist/photoswipe.css'); ?>
+<?= $this->Html->css('/assets/bower_components/photoswipe/dist/default-skin/default-skin.css'); ?>
 
 <!-- core css -->
 <?= $this->Html->css('/assets/assets/css/ei-icon.css'); ?>
@@ -65,3 +67,5 @@
 <?= $this->Html->css('/assets/assets/css/animate.min.css'); ?>
 <?= $this->Html->css('/assets/assets/css/app.css'); ?>
 
+
+    

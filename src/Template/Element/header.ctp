@@ -19,6 +19,9 @@ use Cake\Routing\Router;
             </li>                            
         </ul>
         <ul class="nav-right">
+            <li>
+                <button class="btn btn-primary" onclick="window.location.href='<?= Router::url(['controller' => 'Requests', 'action' => 'addRequest', 'prefix' => 'customer']); ?>'" style="float:right;margin:1% 2% 0% 0%;color: #fff !important;font-weight: 500;background: #ec1c41;border: 0px;margin-top: 15px;">+ Add New Request</button>
+            </li>
             <li class="user-profile dropdown">
                 <a href="" class="dropdown-toggle" data-toggle="dropdown">
                     <img class="profile-img img-fluid" src="assets/images/user.jpg" alt="">

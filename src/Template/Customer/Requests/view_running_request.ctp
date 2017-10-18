@@ -4,6 +4,28 @@ use Cake\Routing\Router;
 
 ?>
 
+<style type="text/css">
+    .card label {
+        font-size: 22px;
+    }
+    .card .space-left label {
+        font-size: 22px;
+        color: black;
+    }
+    .card .space-left {
+        padding-left: 120px; 
+    }
+    .card .fa {
+        padding-left: 50px;
+    }
+    .card table a {
+        color: #888da8;
+    }
+    .fixed-image {
+        width: 300px; 
+        height: 300px;
+    }
+</style>
 <div class="main-content">
     <div class="container-fluid">
         <div class="page-title">
@@ -12,51 +34,46 @@ use Cake\Routing\Router;
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-heading border bottom">
+                    <div class="card-heading">
                         <h4 class="card-title">Info</h4>
                     </div>
                     <div class="card-block">
                         <div class="row">
                             <div class="col-md-11 ml-auto mr-auto">
                                 <form class="form-horizontal mrg-top-40 pdd-right-30 ng-pristine ng-valid">
-                                    <div class="form-group row">                                        
-                                        <label for="form-1-1" class="col-md-5 control-label"><b><h3>PROJECT DETAILS</h3></b></label>
-                                    </div>
                                     <div class="form-group row">
-                                        <label for="form-1-1" class="col-md-2 control-label"><b>Title</b></label>
-                                        <div class="col-md-10">
+                                        <label for="form-1-1" class="col-md-2 control-label text-right"><label>Title</label></label>
+                                        <div class="col-md-10 space-left">
                                             <label><?= $request->title ?></label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="form-1-3" class="col-md-2 control-label"><b>Description</b></label>
-                                        <div class="col-md-10">
+                                        <label for="form-1-3" class="col-md-2 control-label text-right"><label>Description</label></label>
+                                        <div class="col-md-10 space-left">
                                             <label><?= $request->description ?></label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="form-1-3" class="col-md-2 control-label"><b>Use Type</b></label>
-                                        <div class="col-md-10">
+                                        <label for="form-1-3" class="col-md-2 control-label text-right"><label>Use Type</label></label>
+                                        <div class="col-md-10 space-left">
                                             <label><?= $request->work_type ?></label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="form-1-3" class="col-md-2 control-label"><b>Design Dimension</b></label>
-                                        <div class="col-md-10">
+                                        <label for="form-1-3" class="col-md-2 control-label text-right"><label>Design Dimension</label></label>
+                                        <div class="col-md-10 space-left">
                                             <label><?= $request->design_dimension ?></label>
                                         </div>
                                     </div>
-                                    <div class="">
-                                        <h4 class="card-title">Attachments</h4>
-                                        <div class="table-overflow">
-                                            <table class="table" style="border: outset 1px #eee;">
-                                                <thead style="background: RGB(213,224,250);">
+                                    <div class="form-group row">
+                                        <label for="form-1-3" class="col-md-2 control-label text-right"><label>Attachments</label></label>
+                                        <div class="col-md-10 space-left">                                            
+                                            <table class="table">
+                                                <thead>
                                                     <tr>
-                                                        <th>Document Name</th>
-                                                        <th>Attached By</th>
-                                                        <th>Size</th>
-                                                        <th><?=DOWNLOAD_ICON?></th>
-                                                        <th><div class="ei ei-file-delete"></div></th>
+                                                        <th width="50%">Document Name</th>
+                                                        <th width="10%">Size</th>
+                                                        <th width="40%" class="text-right">Action</th>                                                        
                                                     </tr>
                                                 </thead>
                                                     <tbody>
@@ -87,23 +104,23 @@ use Cake\Routing\Router;
                                                                            $request_files[$i]['file_name']."&nbsp;".VIEW_ICON;
                                                                                     }elseif($extension == "jpg" || $extension == "jpeg" || $extension == "png" || $extension == "JPG"){  ?>
                                                                             <!-- <?=$request_files[$i]['file_name']."&nbsp;".VIEW_ICON;?> -->
-                                                                            <td><?=$request_files[$i]['file_name']."&nbsp;"?></td>
-                                                                            <td><?=$designer_name?></td>
+                                                                            <td><?=$request_files[$i]['file_name']."&nbsp;"?></td>                                                                            
                                                                             <td><?=filesize($attachment_path)?></td>
-                                                                            <th><?=VIEW_ICON?></th>
+                                                                            
                                                                     <?php }else{ 
                                                                         $attachment_path2 = REQUEST_IMG_URL . "file.jpg";
                                                                         ?> <!--<img src="<?/*= $attachment_path2 */?>" style="width:150px;"> -->
                                                                         <!-- <?=$request_files[$i]['file_name']."&nbsp;".DOWNLOAD_ICON;?> -->
                                                                             <td><?=$request_files[$i]['file_name']."&nbsp;"?></td>
-                                                                            <td><?=$designer_name?></td>
                                                                             <td><?php echo filesize($attachment_path);?></td>
-                                                                            <td>Doe</td>
-                                                                            <th><?=DOWNLOAD_ICON?></th>
+                                                                            
                                                                     <?php } ?>
                                                                     
-                                                                            
-                                                                            <th><div class="ei ei-file-delete"></div></th>
+                                                                            <th>
+                                                                                <a href="#" class="openfile" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=VIEW_ICON?>&nbsp;&nbsp;&nbsp;View</a>
+                                                                                <a href="<?= $attachment_path ?>" download = ""><?=DOWNLOAD_ICON?>&nbsp;&nbsp;&nbsp;Download</a>
+                                                                                <a href="#" class="openfile" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=CLOSE_ICON?></a>
+                                                                            </th>
                                                                     </tr>
                                                                 </a>
                                                             </div>                                  
@@ -123,7 +140,7 @@ use Cake\Routing\Router;
                                     <div class="form-group row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label><b>Title</b></label>
+                                                <label><label>Title</label></label>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
@@ -135,7 +152,7 @@ use Cake\Routing\Router;
                                     <div class="form-group row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label><b>Description</b></label>
+                                                <label><label>Description</label></label>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
@@ -147,7 +164,7 @@ use Cake\Routing\Router;
                                     <div class="form-group row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label><b>Use Type</b></label>
+                                                <label><label>Use Type</label></label>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
@@ -159,7 +176,7 @@ use Cake\Routing\Router;
                                     <div class="form-group row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label><b>Design Dimension</b></label>
+                                                <label><label>Design Dimension</label></label>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
@@ -171,7 +188,7 @@ use Cake\Routing\Router;
                                     <div class="form-group row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label><b>Attachment</b></label>
+                                                <label><label>Attachment</label></label>
                                             </div>
                                         </div>
                                         <div class="col-md-9">
@@ -252,34 +269,17 @@ use Cake\Routing\Router;
                                         <?php } ?>
                                         <?= $this->Form->end(); ?>                                        
                                 </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-heading border bottom">
+                    <div class="card-heading">
                         <h4 class="card-title">Design</h4>
                     </div>
                     <div class="card-block">
                         <div class="row">
                             <div class="col-md-10 ml-auto mr-auto">
                                 <div class="">
-                                    <h4 class="card-title">Attachments</h4>
                                     <div class="table-overflow">
-                                        <table class="table" style="border: outset 1px #eee;">
-                                            <thead style="background: RGB(213,224,250);">
-                                                <tr>
-                                                    <th>Document Name</th>
-                                                    <th>Attached By</th>
-                                                    <th>Size</th>
-                                                    <th style="text-align: center;"><?=DOWNLOAD_ICON?></th>
-                                                    <th style="text-align: center;"><div class="ei ei-file-delete"></div></th>
-                                                </tr>
-                                            </thead>
-                                                <tbody>                                                  
+                                       <!--  <div class="row masonry-grid" data-pswp-uid="1" style="position: relative; height: 835px;">
+                                            
+                                        </div> -->                                               
                                                     <?php
                                                         $attachment_path = '';
                                                         if ($admin_files):
@@ -293,45 +293,28 @@ use Cake\Routing\Router;
                                                                $attachment_explode = explode(".",$attachment_path); 
                                                                $extension = end($attachment_explode);
                                                             ?>
-                                                                <tr>
-                                                                  <?php 
-                                                                   if($extension == "pdf"){
-                                                                        $attachment_path2 = REQUEST_IMG_URL . "pdf.jpg";
-                                                                        $im     = new Imagick($attachment_path); // 0-first page, 1-second page
-                                                                        $im->setImageType (imagick::IMGTYPE_TRUECOLOR);
-                                                                        $im->setImageColorspace(255); // prevent image colors from inverting
-                                                                        $im->setimageformat("jpeg");
-                                                                        $im->thumbnailimage(160, 120); // width and height
-                                                                        $thumbnail = $im->getImageBlob();
-                                                                        //echo '<img src="data:image/jpg;base64,' .  base64_encode($thumbnail)  . '"  style="width:150px;"/>';
-                                                                       $admin_files[$i]['file_name']."&nbsp;".VIEW_ICON;
-                                                                                }elseif($extension == "jpg" || $extension == "jpeg" || $extension == "png" || $extension == "JPG"){  ?>
-                                                                        <!-- <?=$request_files[$i]['file_name']."&nbsp;".VIEW_ICON;?> -->
-                                                                        <td><?=$admin_files[$i]['file_name']."&nbsp;"?></td>
-                                                                        <td><?=$admin_name?></td>
-                                                                        <td><?=filesize($attachment_path)?></td>
-                                                                <?php }else{ 
-                                                                    $attachment_path2 = REQUEST_IMG_URL . "file.jpg";
-                                                                    ?> <!--<img src="<?/*= $attachment_path2 */?>" style="width:150px;"> -->
-                                                                    <!-- <?=$request_files[$i]['file_name']."&nbsp;".DOWNLOAD_ICON;?> -->
-                                                                        <td><?=$admin_files[$i]['file_name']."&nbsp;"?></td>
-                                                                        <td><?=$admin_name?></td>
-                                                                        <td><?php echo filesize($attachment_path);?></td>
-                                                                        <td>Doe</td>
-                                                                <?php } ?>
-                                                                
-                                                                        <?php if($request->status == "checkforapprove"){ ?>
-                                                                            <?= $this->Form->create($request, ['url' => Router::url(['controller' => 'RequestFiles', 'action' => 'approve', 'prefix' => FALSE], TRUE), 'type' => 'file']); ?>
-                                                                                <?php $this->Form->templates(NOWRAP_TEMPLATE); ?>
-                                                                                <td style="text-align: center;"><?= $this->Form->control('Approve', ['type' => 'button', 'id' => 'approve_modal', 'class' => 'btn btn-success flat-buttons waves-effect waves-button', 'label' => FALSE,'data-toggle'=>'modal', 'data-target'=>'#myModalforall']) ?></td>
-                                                                                <?= $this->Form->hidden('image', ['id' => 'image', 'value' => $attachment_path]) ?>
-                                                                                <?= $this->Form->hidden('approvefile', ['id' => 'file_id', 'value' => $admin_files[$i]['id']]) ?>
-                                                                                <td style="text-align: center;"><?= $this->Form->control('Disapprove', ['type' => 'button', 'id' => 'request_file_uploader_btn', 'class' => 'btn btn-success flat-buttons waves-effect waves-button', 'label' => FALSE ,'data-toggle'=>'modal', 'data-target'=>'#myModal3']) ?></td>
-                                                                                <?= $this->Form->end(); ?>                                                                                
-                                                                        <?php } ?>
-                                                                </tr>
-                                                            </a>
-                                                        </div>                                  
+                                                            <figure class="col-md-3 masonry-brick mrg-btm-30">
+                                                                <a href="assets/images/others/img-13.jpg" class="gallery-item" data-size="700x500">
+                                                                    <?php if($extension == "pdf") { ?>
+                                                                        <img class="img-fluid fixed-image" src="<?= SITE_IMAGES_URL . 'designer4.png' ?>" alt="">
+                                                                    <?php } else { ?>
+                                                                        <img class="img-fluid fixed-image" src="<?=$attachment_path?>" alt="">
+                                                                    <?php } ?>
+                                                                    <div class="overlay">
+                                                                        <div class="overlay-content">
+                                                                            <div class="inline-block">
+                                                                                <h4 class="caption-title">Admin Files</h4>
+                                                                                <span class="caption-date">27/6/2017</span>
+                                                                            </div>
+                                                                            <div class="inline-block pull-right pdd-top-20 font-size-16">
+                                                                                <i class="ti-heart text-white"></i>
+                                                                                <span class="text-white">18</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </figure>
+
                                                         <?php
                                                             }
                                                             endif;
@@ -350,50 +333,32 @@ use Cake\Routing\Router;
                                                                $attachment_explode = explode(".",$attachment_path); 
                                                                $extension = end($attachment_explode);
                                                             ?>
-                                                                <tr>
-                                                                  <?php 
-                                                                   if($extension == "pdf"){
-                                                                        $attachment_path2 = REQUEST_IMG_URL . "pdf.jpg";
-                                                                        $im     = new Imagick($attachment_path); // 0-first page, 1-second page
-                                                                        $im->setImageType (imagick::IMGTYPE_TRUECOLOR);
-                                                                        $im->setImageColorspace(255); // prevent image colors from inverting
-                                                                        $im->setimageformat("jpeg");
-                                                                        $im->thumbnailimage(160, 120); // width and height
-                                                                        $thumbnail = $im->getImageBlob();
-                                                                        //echo '<img src="data:image/jpg;base64,' .  base64_encode($thumbnail)  . '"  style="width:150px;"/>';
-                                                                       $designer_files[$i]['file_name']."&nbsp;".VIEW_ICON;
-                                                                                }elseif($extension == "jpg" || $extension == "jpeg" || $extension == "png" || $extension == "JPG"){  ?>
-                                                                        <!-- <?=$request_files[$i]['file_name']."&nbsp;".VIEW_ICON;?> -->
-                                                                        <td><?=$designer_files[$i]['file_name']."&nbsp;"?></td>
-                                                                        <td><?=$designer_name?></td>
-                                                                        <td><?=filesize($attachment_path)?></td>
-                                                                <?php }else{ 
-                                                                    $attachment_path2 = REQUEST_IMG_URL . "file.jpg";
-                                                                    ?> <!--<img src="<?/*= $attachment_path2 */?>" style="width:150px;"> -->
-                                                                    <!-- <?=$request_files[$i]['file_name']."&nbsp;".DOWNLOAD_ICON;?> -->
-                                                                        <td><?=$designer_files[$i]['file_name']."&nbsp;"?></td>
-                                                                        <td><?=$designer_name?></td>
-                                                                        <td><?php echo filesize($attachment_path);?></td>
-                                                                        <td>Doe</td>
-                                                                <?php } ?>
-                                                                        <?php if($request->status == "checkforapprove"){ ?>
-                                                                            <?= $this->Form->create($request, ['url' => Router::url(['controller' => 'RequestFiles', 'action' => 'approve', 'prefix' => FALSE], TRUE), 'type' => 'file']); ?>
-                                                                                <?php $this->Form->templates(NOWRAP_TEMPLATE); ?>
-                                                                                <td style="text-align: center;"><?= $this->Form->control('Approve', ['type' => 'button', 'id' => 'approve_modal', 'class' => 'btn btn-success flat-buttons waves-effect waves-button', 'label' => FALSE,'data-toggle'=>'modal', 'data-target'=>'#myModalforall']) ?></td>
-                                                                                <?= $this->Form->hidden('image', ['id' => 'image', 'value' => $attachment_path]) ?>
-                                                                                <?= $this->Form->hidden('approvefile', ['id' => 'file_id', 'value' => $designer_files[$i]]) ?>
-                                                                                <td style="text-align: center;"><?= $this->Form->control('Disapprove', ['type' => 'button', 'id' => 'request_file_uploader_btn', 'class' => 'btn btn-success flat-buttons waves-effect waves-button', 'label' => FALSE ,'data-toggle'=>'modal', 'data-target'=>'#myModal3']) ?></td>
-                                                                                <?= $this->Form->end(); ?>                                                                                
-                                                                        <?php } ?>
-                                                                    </tr>
-                                                            </a>
-                                                        </div>                                  
+                                                            <figure class="col-md-3 masonry-brick mrg-btm-30">
+                                                                <a href="assets/images/others/img-13.jpg" class="gallery-item" data-size="700x500">
+                                                                    <?php if($extension == "pdf") { ?>
+                                                                        <img class="img-fluid fixed-image" src="<?= SITE_IMAGES_URL . 'designer4.png' ?>" alt="">
+                                                                    <?php } else { ?>
+                                                                        <img class="img-fluid fixed-image" src="<?=$attachment_path?>" alt="">
+                                                                    <?php } ?>
+                                                                    <div class="overlay">
+                                                                        <div class="overlay-content">
+                                                                            <div class="inline-block">
+                                                                                <h4 class="caption-title">Desinger Files</h4>
+                                                                                <span class="caption-date">27/6/2017</span>
+                                                                            </div>
+                                                                            <div class="inline-block pull-right pdd-top-20 font-size-16">
+                                                                                <i class="ti-heart text-white"></i>
+                                                                                <span class="text-white">18</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </a>
+                                                            </figure>
                                                         <?php
                                                             }
                                                             endif;
                                                             ?>                                                
-                                            </tbody>
-                                        </table>
+
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -425,10 +390,95 @@ use Cake\Routing\Router;
                             </div>
                         </div>
                     </div>
+
+        <div class="card-heading">
+            <h4 class="card-title">Communication</h4>
+        </div>
+        <div class="card-block">
+            <div class="row">
+                <div class="col-md-12">             
+                    <div class="tab-pane" id="communication_tab" role="tabpanel">
+                        <div id="chat" role="tabpanel" class="tab-pane fade in active show" aria-expanded="true">
+                            <div class="chat open">
+                                <div class="chat-user-list scrollable ps-container ps-theme-default ps-active-y" data-ps-id="c114d0fd-1132-892e-9ca8-bf5e4eb13ab3">                                                                                               
+                                <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 463px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 260px;"></div></div></div>
+                                <div class="conversation">
+                                    <div class="conversation-wrapper">
+                                        <div class="conversation-header">
+                                            <a href="javascript:void(0);" class="back chat-toggle">
+                                                <i class="ti-arrow-circle-left"></i>
+                                            </a>
+                                            <span class="user-name">Jordan Hurst</span>
+                                        </div>
+                                        <div class="conversation-body">
+                                            <div class="msg">
+                                                <div class="bubble me">
+                                                    <span>Feeling all right, sir?</span>
+                                                </div>
+                                            </div>
+                                            <div class="msg">
+                                                <div class="bubble friend">
+                                                    <span>Just like new</span>
+                                                </div>
+                                            </div>
+                                            <div class="msg">
+                                                <div class="bubble friend">
+                                                    <span>How about you?</span>
+                                                </div>
+                                            </div>
+                                            <div class="msg">
+                                                <div class="bubble me">
+                                                    <span>Right now I feel I could take on the whole Empire myself</span>
+                                                </div>
+                                            </div>
+                                            <div class="msg">
+                                                <div class="bubble friend">
+                                                    <span>All right</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="conversation-footer">
+                                            <button class="upload-btn">
+                                                <i class="ti-camera"></i>
+                                            </button>
+                                            <input class="chat-input" placeholder="Type a message..." type="text">
+                                            <button class="sent-btn">
+                                                <i class="fa fa-send-o"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="message-page vertion-2">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12">
+                                    <div class="row message-rightbar">
+                                        <div class="row">                                                
+                                            <div class="discussion_container">
+                                                
+                                            </div>    
+                                            <div class="col-md-12">
+                                                <div class="type-message">
+                                                    <input class="chat-input float-xs-left" placeholder="Type a Messages">
+                                                    <span class="chat-type float-xs-right">
+                                                        <a href="javascript:void(0);" class="send_chat_data">
+                                                            <i class="fa fa-paper-plane-o"></i>
+                                                        </a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>
-
+    </div>
+</div>
         <div id="myModal3" class="modal fade" role="dialog">
           <div class="modal-dialog">
             <?= $this->Form->create($request, ['url' => Router::url(['controller' => 'RequestFiles', 'action' => 'disapprove', 'prefix' => FALSE], TRUE), 'type' => 'file']); ?>
@@ -453,7 +503,29 @@ use Cake\Routing\Router;
           </div>
         </div>    
 
-        <div class="modal fade" id="myModalforall" style="display: none;" aria-hidden="true">
+        <div id="myModalforall" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                  </div>
+                  <div class="modal-body myModalforallbody">
+                    
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+                <?= $this->Form->hidden('request_status', ['value' => $request->status]) ?>
+                <?= $this->Form->hidden('request_id', ['value' => $request->id]) ?>
+                <?= $this->Form->end(); ?>
+            </div>
+        </div>  
+
+      <!--   <div class="modal fade" id="myModalforall" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -475,101 +547,7 @@ use Cake\Routing\Router;
                     </div>
                 </div>
             </div>
-        </div>
-        
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-heading border bottom">
-                        <h4 class="card-title">Communication</h4>
-                    </div>
-                    <div class="card-block">
-                        <div class="row">
-                            <div class="col-md-12">             
-                                <div class="tab-pane" id="communication_tab" role="tabpanel">
-                                    <div id="chat" role="tabpanel" class="tab-pane fade in active show" aria-expanded="true">
-                                        <div class="chat open">
-                                            <div class="chat-user-list scrollable ps-container ps-theme-default ps-active-y" data-ps-id="c114d0fd-1132-892e-9ca8-bf5e4eb13ab3">                                                                                               
-                                            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 463px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 260px;"></div></div></div>
-                                            <div class="conversation">
-                                                <div class="conversation-wrapper">
-                                                    <div class="conversation-header">
-                                                        <a href="javascript:void(0);" class="back chat-toggle">
-                                                            <i class="ti-arrow-circle-left"></i>
-                                                        </a>
-                                                        <span class="user-name">Jordan Hurst</span>
-                                                    </div>
-                                                    <div class="conversation-body">
-                                                        <div class="msg">
-                                                            <div class="bubble me">
-                                                                <span>Feeling all right, sir?</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="msg">
-                                                            <div class="bubble friend">
-                                                                <span>Just like new</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="msg">
-                                                            <div class="bubble friend">
-                                                                <span>How about you?</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="msg">
-                                                            <div class="bubble me">
-                                                                <span>Right now I feel I could take on the whole Empire myself</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="msg">
-                                                            <div class="bubble friend">
-                                                                <span>All right</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="conversation-footer">
-                                                        <button class="upload-btn">
-                                                            <i class="ti-camera"></i>
-                                                        </button>
-                                                        <input class="chat-input" placeholder="Type a message..." type="text">
-                                                        <button class="sent-btn">
-                                                            <i class="fa fa-send-o"></i>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="message-page vertion-2">
-                                        <div class="row">
-                                            <div class="col-xl-12 col-md-12">
-                                                <div class="row message-rightbar">
-                                                    <div class="row">                                                
-                                                        <div class="discussion_container">
-                                                            
-                                                        </div>    
-                                                        <div class="col-md-12">
-                                                            <div class="type-message">
-                                                                <input class="chat-input float-xs-left" placeholder="Type a Messages">
-                                                                <span class="chat-type float-xs-right">
-                                                                    <a href="javascript:void(0);" class="send_chat_data">
-                                                                        <i class="fa fa-paper-plane-o"></i>
-                                                                    </a>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

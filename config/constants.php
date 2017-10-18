@@ -31,13 +31,14 @@ define('PORTFOLIO_IMAGE_URL', Router::url('/', TRUE) . 'uploads/portfolio/');
 define('REQUEST_IMG_PATH', WWW_ROOT . 'uploads/requests/');
 define('REQUEST_IMG_URL', Router::url('/', TRUE) . 'uploads/requests/');
 
-define('THEME_IMAGES', Router::url('/', TRUE) . '/theme/assets/global/image/');
+define('THEME_IMAGES', Router::url('/', TRUE) . 'theme/assets/global/image/');
 
-define('SITE_IMAGES_URL', Router::url('/', TRUE) . '/img/');
+define('SITE_IMAGES_URL', Router::url('/', TRUE) . 'img/');
 
 define('ATTACHMENT_ICON' ,'<i class="fa fa-paperclip" aria-hidden="true"></i>');
 define('DOWNLOAD_ICON' ,'<i class="fa fa-download" aria-hidden="true"></i>');
 define('VIEW_ICON', '<i class="fa fa-eye" aria-hidden="true"></i>');
+define('CLOSE_ICON', '<i class="fa fa-times" aria-hidden="true"></i>');
 
 const LOGIN_CHECK = TRUE;
 const LOG_ENABLED = TRUE;

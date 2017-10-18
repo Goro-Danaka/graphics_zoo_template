@@ -397,7 +397,7 @@ class AppController extends Controller {
 
 
         if ($user):
-			//print_r($image_object); exit;
+	
 			for($i=0;$i<sizeof($image_object);$i++){
 				if (!empty($image_object[$i]['name'])):
 					$file_name = $image_object[$i]['name'];
@@ -425,6 +425,47 @@ class AppController extends Controller {
 
         return $status;
     }
+
+    public function uploadRequestTempFiles($user_id, $request_id, $image_object) {
+        $status = 0;
+        $user = $this->Users
+                ->find()
+                ->where(['Users.id' => $user_id])
+                ->first();
+
+        if ($user):
+           
+            if (!empty($image_object['name'])):
+                $file_name =$image_object['name'];
+                $file_tmp = $image_object['tmp_name'];
+
+                $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                $new_file_name = md5(uniqid()) . time() . $request_id . '.' . $file_ext;
+                $dir = new Folder(REQUEST_IMG_PATH . $request_id, TRUE, 0777);
+                $path = REQUEST_IMG_PATH . $request_id . DS . $new_file_name;
+                    
+                $file_move = move_uploaded_file($file_tmp, $path);
+                if ($file_move):
+
+                    $request_file = $this->RequestFiles->newEntity();
+                    $request_file->request_id = $request_id;
+                    $request_file->user_id = $user->id;
+                    $request_file->user_type = "customer";
+                    $request_file->file_name = $new_file_name;                        
+                    $id = $this->RequestFiles->save($request_file);
+                    if ($id):
+                        header('Content-Type: application/json; charset=utf-8');
+                        echo json_encode(array("path" => $new_file_name, "id" => $id->id));
+                        exit;
+                        $status = 1;
+                    endif;
+                endif;
+            endif;
+
+        endif;
+
+        return $status;
+    }
 	
 	public function uploadRequestFilesCustomer($user_id, $request_id, $image_object) {
         $status = 0;
@@ -435,23 +476,25 @@ class AppController extends Controller {
 
 
         if ($user):
-			//print_r($image_object); exit;
-			for($i=0;$i<sizeof($image_object);$i++){
-				if (!empty($image_object[$i]['name'])):
-					$file_name = $image_object[$i]['name'];
-					$file_tmp = $image_object[$i]['tmp_name'];
+            
+            foreach ($image_object as $i => $value) {
+				if (!empty($value['name'])):
+					$file_name =$value['name'];
+					$file_tmp = $value['tmp_name'];
 
 					$file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 					$new_file_name = md5(uniqid()) . time() . $request_id . '.' . $file_ext;
 					$dir = new Folder(REQUEST_IMG_PATH . $request_id, TRUE, 0777);
 					$path = REQUEST_IMG_PATH . $request_id . DS . $new_file_name;
+                        
 					$file_move = move_uploaded_file($file_tmp, $path);
 					if ($file_move):
+
 						$request_file = $this->RequestFiles->newEntity();
 						$request_file->request_id = $request_id;
 						$request_file->user_id = $user->id;
 						$request_file->user_type = "customer";
-						$request_file->file_name = $new_file_name;
+						$request_file->file_name = $new_file_name;                        
 						if ($this->RequestFiles->save($request_file)):
 							$status = 1;
 						endif;

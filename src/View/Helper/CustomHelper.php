@@ -50,4 +50,7 @@ class CustomHelper extends Helper {
         return $active_item_class;
     }
 
+    public function showText() {
+        return "New Text";
+    }
 }
