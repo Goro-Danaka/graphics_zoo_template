@@ -70,7 +70,7 @@ use Cake\Routing\Router;
     }
 
     .icon-dashboard {
-        background: url(/img/img/receive.png);
+        background: url(/img/dashboard.png);
     }
 
     .icon-request {
@@ -78,7 +78,7 @@ use Cake\Routing\Router;
     }
 
     .icon-settings {
-        background: url(/img/img/receive.png);        
+        background: url(/img/setting.png);        
     }
 
     .icon-holder {
