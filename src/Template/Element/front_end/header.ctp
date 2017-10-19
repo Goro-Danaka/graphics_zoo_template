@@ -57,17 +57,17 @@ $current_action = $this->request->params['action'];
 		</li>
 		<?php if ($loggedUser): ?>
 		<li class=" <?if($current_action=='logout'){ echo 'active'; }?> ">
-		<a href="<?= Router::url(['controller' => 'Users', 'action' => 'logout1', 'prefix' => NULL], TRUE) ?>">Logout</a>
+		<a href="<?= Router::url(['controller' => 'Users', 'action' => 'logout', 'prefix' => NULL], TRUE) ?>">Logout</a>
 		</li>
 		<li class=" <?if($current_action=='login'){ echo 'active'; }?> ">
-		<a href="<?= Router::url(['controller' => 'Pages', 'action' => 'login1', 'prefix' => NULL], TRUE) ?>">Dashboard</a>
+		<a href="<?= Router::url(['controller' => 'Pages', 'action' => 'login', 'prefix' => NULL], TRUE) ?>">Dashboard</a>
 		</li>
 		<?php else: ?>
 		<li class=" <?if($current_action=='login'){ echo 'active'; }?> ">
-		<a href="<?= Router::url(['controller' => 'Pages', 'action' => 'login1', 'prefix' => NULL], TRUE) ?>">Login</a>
+		<a href="<?= Router::url(['controller' => 'Pages', 'action' => 'login', 'prefix' => NULL], TRUE) ?>">Login</a>
 		</li>
 		<li class=" <?if($current_action=='signup'){ echo 'active'; }?> signlink">
-		<a  href="<?= Router::url(['controller' => 'Pages', 'action' => 'signup1', 'prefix' => NULL], TRUE) ?>">Sign Up</a>
+		<a  href="<?= Router::url(['controller' => 'Pages', 'action' => 'signup', 'prefix' => NULL], TRUE) ?>">Sign Up</a>
 		</li>
 		<?php endif; ?>
 		</ul>

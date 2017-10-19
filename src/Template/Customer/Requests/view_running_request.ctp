@@ -25,6 +25,40 @@ use Cake\Routing\Router;
         width: 300px; 
         height: 300px;
     }
+    .card-title img {
+        width: 20px;
+        height: 20px;
+    }
+    .card-title span {
+        color: red;
+        font-size: 30px;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    table th:last-of-type{
+        text-align: right;
+    }
+
+    .image-upload input{
+        display: none;
+    }
+
+    .image-upload img {
+        width: 40px;
+    }
+
+    .file-input {
+        border-radius: 7px;
+        border: solid red 2px;
+        padding: 7px 19px;
+        cursor: pointer;
+    }
+
+    .image-upload span {
+        color: red;
+        font-size: 15px;
+        margin-left: 20px;
+    }
 </style>
 <div class="main-content">
     <div class="container-fluid">
@@ -35,39 +69,83 @@ use Cake\Routing\Router;
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-heading">
-                        <h4 class="card-title">Info</h4>
+                        <h4 class="card-title"><img src = "<?= SITE_IMAGES_URL . 'img/receive.png' ?>" width = "50px"><span>Info</span></h4>
                     </div>
                     <div class="card-block">
                         <div class="row">
-                            <div class="col-md-11 ml-auto mr-auto">
+                            <div class="col-md-12 ml-auto mr-auto">
                                 <form class="form-horizontal mrg-top-40 pdd-right-30 ng-pristine ng-valid">
+                                    <?php $nameColor = "color: RGB(255,0,0);font-weight:bold;"; $stateColor = "color:RGB(210,210,0);font-weight:bold;";?>
                                     <div class="form-group row">
-                                        <label for="form-1-1" class="col-md-2 control-label text-right"><label>Title</label></label>
-                                        <div class="col-md-10 space-left">
+                                        <label for="form-1-1" class="col-md-3 control-label text-right"><label>Designer:</label></label>
+                                        <div class="col-md-9 space-left">
+                                            <label style="<?=$nameColor?>">Rey</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>Change State:</label></label>
+                                        <div class="col-md-9 space-left">
+                                            <label style="<?=$stateColor?>">In Progress</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="form-1-1" class="col-md-3 control-label text-right"><label>Title:</label></label>
+                                        <div class="col-md-9 space-left">
                                             <label><?= $request->title ?></label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="form-1-3" class="col-md-2 control-label text-right"><label>Description</label></label>
-                                        <div class="col-md-10 space-left">
+                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>Description:</label></label>
+                                        <div class="col-md-9 space-left">
                                             <label><?= $request->description ?></label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="form-1-3" class="col-md-2 control-label text-right"><label>Use Type</label></label>
-                                        <div class="col-md-10 space-left">
-                                            <label><?= $request->work_type ?></label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="form-1-3" class="col-md-2 control-label text-right"><label>Design Dimension</label></label>
-                                        <div class="col-md-10 space-left">
+                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>Design Dimension:</label></label>
+                                        <div class="col-md-9 space-left">
                                             <label><?= $request->design_dimension ?></label>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="form-1-3" class="col-md-2 control-label text-right"><label>Attachments</label></label>
-                                        <div class="col-md-10 space-left">                                            
+                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>What business industry in this design for?</label></label>
+                                        <div class="col-md-9 space-left">
+                                            <label><?= $request->design_dimension ?></label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>What colors do you want for this design?</label></label>
+                                        <div class="col-md-9 space-left">
+                                            <label><?= $request->design_dimension ?></label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>Do you have some style suggestions?</label></label>
+                                        <div class="col-md-9 space-left">
+                                            <label><?= $request->design_dimension ?></label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>Do you have a logotype of brand identity?<br>(Please attach also)</label></label>
+                                        <div class="col-md-9 space-left">
+                                            <label><?= $request->design_dimension ?></label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>Is there any other info you would like to provide the designer?</label></label>
+                                        <div class="col-md-9 space-left">
+                                            <label><?= $request->design_dimension ?></label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>Attachments</label></label>
+                                        <div class="col-md-9 space-left">  
+                                            <div class="image-upload">
+                                                <label class="file-input">
+                                                    <image src="<?= REQUEST_IMG_URL ?>image/cloud.png" />
+                                                    <span>Drag and drop a file here or click  </span>
+                                                </label>
+                                                <?= $this->Form->control('file[]', ['type' => 'file', 'id' => 'upload_file', 'label' => FALSE]) ?>
+                                            </div>                                          
                                             <table class="table">
                                                 <thead>
                                                     <tr>
@@ -240,7 +318,7 @@ use Cake\Routing\Router;
                                             </div>
                                         </div>
                                     </div>   -->
-                                    <?= $this->Form->create($request, ['url' => Router::url(['controller' => 'RequestFiles', 'action' => 'uploadFileCustomer', 'prefix' => FALSE], TRUE), 'type' => 'file']); ?>
+<!--                                     <?= $this->Form->create($request, ['url' => Router::url(['controller' => 'RequestFiles', 'action' => 'uploadFileCustomer', 'prefix' => FALSE], TRUE), 'type' => 'file']); ?>
                                         <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12"  style="margin-top: 20px;">
                                             <div class="form-group" id="addnewimage" style="position:relative;">
                                                 <div class="row">
@@ -257,8 +335,8 @@ use Cake\Routing\Router;
                                                     </div>
                                                 </div>
                                             </div> 
-                                        </div>                                        
-                                        <?php $this->Form->templates(NOWRAP_TEMPLATE); ?>
+                                        </div>     -->                                    
+          <!--                               <?php $this->Form->templates(NOWRAP_TEMPLATE); ?>
                                         <?php if($request->status_designer != "pending"){ ?>
                                                 <div class="element-form">
                                                     <div class="col-xl-2 col-lg-3 col-sm-12 col-md-3 text-xs-right"></div>
@@ -267,59 +345,25 @@ use Cake\Routing\Router;
                                                     </div>
                                                 </div>
                                         <?php } ?>
-                                        <?= $this->Form->end(); ?>                                        
+                                        <?= $this->Form->end(); ?>   -->                                      
                                 </div>
                     <div class="card-heading">
-                        <h4 class="card-title">Design</h4>
+                        <h4 class="card-title"><img src = "<?= SITE_IMAGES_URL . 'img/receive.png' ?>" width = "50px"><span>Designer Uploaded Files</span></h4>
                     </div>
                     <div class="card-block">
                         <div class="row">
                             <div class="col-md-10 ml-auto mr-auto">
                                 <div class="">
                                     <div class="table-overflow">
-                                       <!--  <div class="row masonry-grid" data-pswp-uid="1" style="position: relative; height: 835px;">
-                                            
-                                        </div> -->                                               
-                                                    <?php
-                                                        $attachment_path = '';
-                                                        if ($admin_files):
-                                                            for($i=0;$i<sizeof($admin_files);$i++){
-                                                                if ($admin_files[$i]['file_name']): 
-                                                                $attachment_path = REQUEST_IMG_URL . $request->id . DS . $admin_files[$i]['file_name'];
-                                                                endif;
-                                                    ?>
-                                                   
-                                                            <?php 
-                                                               $attachment_explode = explode(".",$attachment_path); 
-                                                               $extension = end($attachment_explode);
-                                                            ?>
-                                                            <figure class="col-md-3 masonry-brick mrg-btm-30">
-                                                                <a href="assets/images/others/img-13.jpg" class="gallery-item" data-size="700x500">
-                                                                    <?php if($extension == "pdf") { ?>
-                                                                        <img class="img-fluid fixed-image" src="<?= SITE_IMAGES_URL . 'designer4.png' ?>" alt="">
-                                                                    <?php } else { ?>
-                                                                        <img class="img-fluid fixed-image" src="<?=$attachment_path?>" alt="">
-                                                                    <?php } ?>
-                                                                    <div class="overlay">
-                                                                        <div class="overlay-content">
-                                                                            <div class="inline-block">
-                                                                                <h4 class="caption-title">Admin Files</h4>
-                                                                                <span class="caption-date">27/6/2017</span>
-                                                                            </div>
-                                                                            <div class="inline-block pull-right pdd-top-20 font-size-16">
-                                                                                <i class="ti-heart text-white"></i>
-                                                                                <span class="text-white">18</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </figure>
-
-                                                        <?php
-                                                            }
-                                                            endif;
-                                                            ?>            
-
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th width="50%">Document Name</th>
+                                                    <th width="10%">Size</th>
+                                                    <th width="40%" class="text-right">Action</th>                                                        
+                                                </tr>
+                                            </thead>
+                                                <tbody>
                                                     <?php
                                                         $attachment_path = '';
                                                         if ($designer_files):
@@ -328,37 +372,55 @@ use Cake\Routing\Router;
                                                                 $attachment_path = REQUEST_IMG_URL . $request->id . DS . $designer_files[$i]['file_name'];
                                                                 endif;
                                                     ?>
-                                                    
+                                                   
                                                             <?php 
                                                                $attachment_explode = explode(".",$attachment_path); 
                                                                $extension = end($attachment_explode);
                                                             ?>
-                                                            <figure class="col-md-3 masonry-brick mrg-btm-30">
-                                                                <a href="assets/images/others/img-13.jpg" class="gallery-item" data-size="700x500">
-                                                                    <?php if($extension == "pdf") { ?>
-                                                                        <img class="img-fluid fixed-image" src="<?= SITE_IMAGES_URL . 'designer4.png' ?>" alt="">
-                                                                    <?php } else { ?>
-                                                                        <img class="img-fluid fixed-image" src="<?=$attachment_path?>" alt="">
-                                                                    <?php } ?>
-                                                                    <div class="overlay">
-                                                                        <div class="overlay-content">
-                                                                            <div class="inline-block">
-                                                                                <h4 class="caption-title">Desinger Files</h4>
-                                                                                <span class="caption-date">27/6/2017</span>
-                                                                            </div>
-                                                                            <div class="inline-block pull-right pdd-top-20 font-size-16">
-                                                                                <i class="ti-heart text-white"></i>
-                                                                                <span class="text-white">18</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </a>
-                                                            </figure>
-                                                        <?php
-                                                            }
-                                                            endif;
-                                                            ?>                                                
-
+                                                                <tr>
+                                                                  <?php 
+                                                                   if($extension == "pdf"){
+                                                                        $attachment_path2 = REQUEST_IMG_URL . "pdf.jpg";
+                                                                        // $im     = new Imagick($attachment_path); // 0-first page, 1-second page
+                                                                        // $im->setImageType (imagick::IMGTYPE_TRUECOLOR);
+                                                                        // $im->setImageColorspace(255); // prevent image colors from inverting
+                                                                        // $im->setimageformat("jpeg");
+                                                                        // $im->thumbnailimage(160, 120); // width and height
+                                                                        // $thumbnail = $im->getImageBlob();
+                                                                        //echo '<img src="data:image/jpg;base64,' .  base64_encode($thumbnail)  . '"  style="width:150px;"/>';
+                                                                       $designer_files[$i]['file_name']."&nbsp;".VIEW_ICON;
+                                                                                }elseif($extension == "jpg" || $extension == "jpeg" || $extension == "png" || $extension == "JPG"){  ?>
+                                                                        <!-- <?=$designer_files[$i]['file_name']."&nbsp;".VIEW_ICON;?> -->
+                                                                        <td><?=$designer_files[$i]['file_name']."&nbsp;"?></td>                                                                            
+                                                                        <td><?=filesize($attachment_path)?></td>
+                                                                        
+                                                                <?php }else{ 
+                                                                    $attachment_path2 = REQUEST_IMG_URL . "file.jpg";
+                                                                    ?> <!--<img src="<?/*= $attachment_path2 */?>" style="width:150px;"> -->
+                                                                    <!-- <?=$designer_files[$i]['file_name']."&nbsp;".DOWNLOAD_ICON;?> -->
+                                                                        <td><?=$designer_files[$i]['file_name']."&nbsp;"?></td>
+                                                                        <td><?php echo filesize($attachment_path);?></td>
+                                                                        
+                                                                <?php } ?>
+                                                                
+                                                                        <th>
+                                                                            <a href="#" class="openfile" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=VIEW_ICON?>&nbsp;&nbsp;&nbsp;View</a>
+                                                                            <a href="<?= $attachment_path ?>" download = ""><?=DOWNLOAD_ICON?>&nbsp;&nbsp;&nbsp;Download</a>
+                                                                            <a href="#" class="openfile" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=CLOSE_ICON?></a>
+                                                                        </th>
+                                                                </tr>
+                                                            </a>
+                                                        </div>                                  
+                                                <?php
+                                                    }
+                                                    endif;
+                                                    ?>                                                
+                                            </tbody>
+                                        </table>
+                                       <!--  <div class="row masonry-grid" data-pswp-uid="1" style="position: relative; height: 835px;">
+                                            
+                                        </div> -->                                               
+                                                  
                                     </div>
                                 </div>
                                 <div class="col-md-8">
@@ -392,7 +454,7 @@ use Cake\Routing\Router;
                     </div>
 
         <div class="card-heading">
-            <h4 class="card-title">Communication</h4>
+            <h4 class="card-title"><img src = "<?= SITE_IMAGES_URL . 'img/receive.png' ?>" width = "50px"><span>Communication</span></h4>
         </div>
         <div class="card-block">
             <div class="row">
@@ -672,6 +734,9 @@ use Cake\Routing\Router;
 			$('#myModal').modal('show');
 		}
 
+        $('.file-input').click(function(){
+            $('.image-upload #upload_file').trigger('click');
+        });
     });
 </script>
 <style>

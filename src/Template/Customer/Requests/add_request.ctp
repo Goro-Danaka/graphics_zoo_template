@@ -15,6 +15,26 @@ use Cake\Routing\Router;
     .card .fa {
         padding-left: 50px;
     }
+    .image-upload > input{
+        display: none;
+    }
+
+    .image-upload img {
+        width: 40px;
+    }
+
+    .file-input {
+        border-radius: 7px;
+        border: solid red 2px;
+        padding: 7px 19px;
+        cursor: pointer;
+    }
+
+    .image-upload span {
+        color: red;
+        font-size: 15px;
+        margin-left: 20px;
+    }
 </style>
 <div class="main-content">
     <div class="container-fluid">
@@ -147,7 +167,14 @@ use Cake\Routing\Router;
                                                 <div class="form-group" id="addnewimage" style="position:relative;">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <?= $this->Form->control('file[]', ['type' => 'file', 'id' => 'upload_file', 'label' => FALSE]) ?>
+                                                            
+                                                            <div class="image-upload">
+                                                                <label class="file-input">
+                                                                    <image src="<?= REQUEST_IMG_URL ?>image/cloud.png" />
+                                                                    <span>Drag and drop a file here or click  </span>
+                                                                </label>
+                                                                <?= $this->Form->control('file[]', ['type' => 'file', 'id' => 'upload_file', 'label' => FALSE]) ?>
+                                                            </div>
                                                            <table class="table">
                                                                 <thead>
                                                                     <tr>
@@ -275,6 +302,10 @@ use Cake\Routing\Router;
         $('table').on('click', '.deletefile', function () {
             alert('a');
             $(this).parent().parent().remove();
+        });
+
+        $('.file-input').click(function(){
+            $('.image-upload #upload_file').trigger('click');
         });
 
     });

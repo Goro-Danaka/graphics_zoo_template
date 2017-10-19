@@ -29,7 +29,11 @@ use Cake\Routing\Router;
     }
 
     .side-nav .side-nav-inner ul {
-        padding: 15px!important;
+        padding: 15px 0px!important;
+    }
+
+    .side-nav .side-nav-inner ul > li {
+        padding-left: 20px !important;
     }
 
     .side-nav-inner .nav-item span {
