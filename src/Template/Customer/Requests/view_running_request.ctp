@@ -77,6 +77,15 @@ use Cake\Routing\Router;
     th.action a{
         margin-left: 20px; 
     }
+    .openApprovedDialog {
+        background-color: RGB(105,209,84);
+        color: white;
+    }
+    .openRevisionDialog {
+        background-color: RGB(229,31,68);
+        color: white;
+    }
+
 </style>
 <div class="main-content">
     <div class="container-fluid">
@@ -87,7 +96,7 @@ use Cake\Routing\Router;
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-heading">
-                        <h4 class="card-title"><img src = "<?= SITE_IMAGES_URL . 'img/receive.png' ?>" width = "50px"><span>Info</span></h4>
+                        <h4 class="card-title"><img src = "<?= SITE_IMAGES_URL . 'info.png' ?>" width = "50px"><span>Info</span></h4>
                     </div>
                     <div class="card-block">
                         <div class="row">
@@ -472,7 +481,7 @@ use Cake\Routing\Router;
                     </div>
 
         <div class="card-heading">
-            <h4 class="card-title"><img src = "<?= SITE_IMAGES_URL . 'img/receive.png' ?>" width = "50px"><span>Communication</span></h4>
+            <h4 class="card-title"><img src = "<?= SITE_IMAGES_URL . 'communication.png' ?>" width = "50px"><span>Communication</span></h4>
         </div>
         <div class="card-block">
             <div class="row">
@@ -559,7 +568,7 @@ use Cake\Routing\Router;
     </div>
 </div>
         <div id="revisionModel" class="modal fade" role="dialog">
-          <div class="modal-dialog">
+          <div class="modal-dialog modal-lg">
             <?= $this->Form->create($request, ['url' => Router::url(['controller' => 'RequestFiles', 'action' => 'disapprove', 'prefix' => FALSE], TRUE), 'type' => 'file']); ?>
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -569,20 +578,21 @@ use Cake\Routing\Router;
                   </div>
                   <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-10 ml-auto mr-auto">
                                 <div class="form-group">
-                                    <label>Add notes for revision</label>
+                                    <img src = "<?= SITE_IMAGES_URL . 'communication.png' ?>" style="width:25px;height:20px;"><span style="color:red;margin-left: 15px;">Add notes for revision</span>
+                                </div>
+                                <div class="form-group">
                                     <input placeholder="Enter reason" name="reason" class="form-control" type="email">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-xs-6">
-                            </div>
-                            <div class="col-md-6 col-xs-6">
+                            <div class="col-md-10 mr-auto ml-auto">
                                 <div class="text-right mrg-top-5">
-                                    <!-- <button type="submit" class="btn btn-primary">Create Account</button> -->
-                                    <a href="#"><img src="<?= SITE_IMAGES_URL . 'send_button.png' ?>"></a>
+                                    <button type="submit" class="btn" style="background-color: RGB(229,31,68);color: white;"><img src="<?= SITE_IMAGES_URL . 'send_button.png' ?>" style="width: 20px;height: 23px;">&nbsp;&nbsp;&nbsp;Send to Designer</button>
+                                    
+                                    <!-- <a href="#"><img src="<?= SITE_IMAGES_URL . 'send_button.png' ?>"></a> -->
                                 </div>
                             </div>
                         </div>
@@ -598,7 +608,7 @@ use Cake\Routing\Router;
         </div>    
 
         <div id="myModalforall" class="modal fade" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
 
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -620,7 +630,7 @@ use Cake\Routing\Router;
         </div>  
 
         <div class="modal fade" id="decisionModal" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>

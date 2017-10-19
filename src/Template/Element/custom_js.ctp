@@ -118,7 +118,7 @@ use Cake\Routing\Router;
         var html = "";
         if(extension == 'jpg' || extension == 'jpeg' || extension == 'png' || extension == 'JPG'){
             jQuery('.approvedDialogBody').html('');
-            html += '<div class = "row"><div class = "col-md-4 ml-auto mr-auto"><img src="<?= SITE_IMAGES_URL . 'approved.png' ?>" style="width: 100%;margin-top: 25px;"></div><div class = "col-md-10 ml-auto mr-auto"><p style="font-size:20px;text-align:center;">Design Approved!</p></div><div class = "col-md-10 ml-auto mr-auto"><p style = "font-style:italic;">Click "Download" button to access source files and hi-resolution version of your design.</p></div><div class = "col-md-4 ml-auto mr-auto"><a href = "' + filepath + '" download id = "' + filepath + '"><img src="<?= SITE_IMAGES_URL . 'download.png' ?>" style="width: 100%;"></a></div> <div class = "col-md-10 ml-auto mr-auto"><a href="#" style="text-align:center;font-style:italic; color:green;" class="col-md-12 ml-auto mr-auto close" data-dismiss="modal"><span style="text-align: center;font-size: 15px;font-weight: unset;">Thanks, I will download this later.</span></a></div><div class = "col-md-10 ml-auto mr-auto"><p style = "font-style:italic;text-align:center;">*Please be notified that all source files will be removed after 14 days.</p></div></div>';
+            html += '<div class = "row"><div class = "col-md-4 ml-auto mr-auto"><img src="<?= SITE_IMAGES_URL . 'approved.png' ?>" style="width: 100%;margin-top: 25px;"></div><div class = "col-md-10 ml-auto mr-auto"><p style="font-size:20px;text-align:center;">Design Approved!</p></div><div class = "col-md-10 ml-auto mr-auto"><p style = "font-style:italic;">Click "Download" button to access source files and hi-resolution version of your design.</p></div><div class = "col-md-4 ml-auto mr-auto"><a href = "' + filepath + '" download id = "' + filepath + '"><img src="<?= SITE_IMAGES_URL . 'download.png' ?>" style="width: 100%;"></a></div> <div class = "col-md-10 ml-auto mr-auto"><a href="#" style="text-align:center;font-style:italic; color:green;" class="col-md-12 ml-auto mr-auto close" data-dismiss="modal"><span style="text-align: center;font-size: 15px;font-weight: unset;">Thanks, I will download this later.</span></a></div><div class = "col-md-10 ml-auto mr-auto"><p style = "font-style:italic;text-align:center;font-size:10px;">*Please be notified that all source files will be removed after 14 days.</p></div></div>';
             jQuery('.approvedDialogBody').html(html);
             jQuery('#approvedDialog').modal('show'); 
         }else if(extension == "pdf"){
@@ -140,7 +140,7 @@ use Cake\Routing\Router;
         var extension = jQuery(this).attr('data-extension');
         var filepath = jQuery(this).attr('data-path');
         var html = "";
-        html += '<div class="row"><div class="col-md-8 ml-auto mr-auto" style="text-align:center;"><h3>Upload Image</h3>';
+        html += '<div class="col-md-8 ml-auto mr-auto"><div class="col-md-12 ml-auto mr-auto" style="text-align:center;"><h3>Upload Image</h3>';
         if(extension == 'jpg' || extension == 'jpeg' || extension == 'png' || extension == 'JPG'){
             jQuery('.revisionModelBody').html('');
             html += '<img src="'+filepath+'" style="margin-top: 25px;"></div></div>';
@@ -166,7 +166,7 @@ use Cake\Routing\Router;
         var html = "", footer = "";
         
 
-        footer = '<div class="row"><a href="#" class="openApprovedDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal"><img src="<?= SITE_IMAGES_URL . 'approve_button.png' ?>" style="width: 100%;"></a><a href="#" class="openRevisionDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal"><img src="<?= SITE_IMAGES_URL . 'disapprove_button.png' ?>" style="width: 100%;"></a></div>';
+        footer = '<div class="row"><button class="btn openApprovedDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal">Approve Design</button><button class="btn openRevisionDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal">Ask For Revision</button></div>';
         //footer += '<div class="row"><p>Approving the design will give you access to it’s source files.</p></div>'
         html += '<div class = "row"><h3 class = "col-md-8 ml-auto mr-auto" style = "text-align:center;">' + "Upload Image" + '</h3></div>';
         if(extension == 'jpg' || extension == 'jpeg' || extension == 'png' || extension == 'JPG'){
