@@ -74,6 +74,9 @@ use Cake\Routing\Router;
     #decisionModal .modal-content {
         padding: 0px 70px;
     }
+    th.action a{
+        margin-left: 20px; 
+    }
 </style>
 <div class="main-content">
     <div class="container-fluid">
@@ -209,7 +212,7 @@ use Cake\Routing\Router;
                                                                             
                                                                     <?php } ?>
                                                                     
-                                                                            <th>
+                                                                            <th class="action">
                                                                                 <a href="#" class="openfile" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=VIEW_ICON?>&nbsp;&nbsp;&nbsp;View</a>
                                                                                 <a href="<?= $attachment_path ?>" download = ""><?=DOWNLOAD_ICON?>&nbsp;&nbsp;&nbsp;Download</a>
                                                                                 <a href="#" class="openfile" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=CLOSE_ICON?></a>
@@ -418,8 +421,8 @@ use Cake\Routing\Router;
                                                                         
                                                                 <?php } ?>
                                                                 
-                                                                        <th>
-                                                                            <a href="#" class="openDecisionDialog" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=VIEW_ICON?>&nbsp;&nbsp;&nbsp;View</a>
+                                                                        <th class="action">
+                                                                            <a href="#" class="openDecisionDialog" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=RED_VIEW_ICON?>&nbsp;&nbsp;&nbsp;<span style="color:RGB(226,33,68);">View</span></a>
                                                                             <a href="<?= $attachment_path ?>" download = ""><?=DOWNLOAD_ICON?>&nbsp;&nbsp;&nbsp;Download</a>
                                                                             <a href="#" class="openDecisionDialog" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=CLOSE_ICON?></a>
                                                                         </th>

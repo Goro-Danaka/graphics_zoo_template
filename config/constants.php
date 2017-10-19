@@ -36,9 +36,13 @@ define('THEME_IMAGES', Router::url('/', TRUE) . 'theme/assets/global/image/');
 define('SITE_IMAGES_URL', Router::url('/', TRUE) . 'img/');
 
 define('ATTACHMENT_ICON' ,'<i class="fa fa-paperclip" aria-hidden="true"></i>');
-define('DOWNLOAD_ICON' ,'<i class="fa fa-download" aria-hidden="true"></i>');
-define('VIEW_ICON', '<i class="fa fa-eye" aria-hidden="true"></i>');
-define('CLOSE_ICON', '<i class="fa fa-times" aria-hidden="true"></i>');
+// define('DOWNLOAD_ICON' ,'<i class="fa fa-download" aria-hidden="true"></i>');
+// define('VIEW_ICON', '<i class="fa fa-eye" aria-hidden="true"></i>');
+define('VIEW_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "eye_gray.png' style = 'height:15px;width:22px;'>");
+define('DOWNLOAD_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "download_small.png' style = 'height:18px;width:18px;'>");
+define('CLOSE_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "close_button.png' style = 'height:17px;width:17px;'>");
+define('REVIEW_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "eye_white.png' style = 'height:16px;width:23px;'>");
+define('RED_VIEW_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "eye_red.png' style = 'height:16px;width:23px;'>");
 
 const LOGIN_CHECK = TRUE;
 const LOG_ENABLED = TRUE;

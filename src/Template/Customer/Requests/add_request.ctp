@@ -35,6 +35,15 @@ use Cake\Routing\Router;
         font-size: 15px;
         margin-left: 20px;
     }
+
+    th.action a{
+        margin-left: 20px; 
+        color: #888da8;
+    }
+
+    th.action {
+        text-align: right;
+    }
 </style>
 <div class="main-content">
     <div class="container-fluid">
@@ -196,9 +205,9 @@ use Cake\Routing\Router;
                                     <div class="row">
                                         <div class="col-md-10">
                                             <div class="form-group" style = "text-align: center;">
-                                                <?= $this->Form->button('+ Add Request', ['type' => 'submit', 'class' => 'btn btn-success flat-buttons waves-effect waves-button','style'=>'border: #f83a5b;background: RGB(13,48,68);height: 50px;border-radius: 10px;']) ?>                                          
+                                                <?= $this->Form->button('+ Add Request', ['type' => 'submit', 'class' => 'btn btn-success','style'=>'border: #f83a5b;background: RGB(13,48,68);height: 50px;border-radius: 10px;']) ?>                                          
                                                 <a href="<?= \Cake\Routing\Router::url(['controller' => 'Requests', 'action' => 'allRequests'], TRUE)?>">
-                                                    <?= $this->Form->button('Cancel', ['type' => 'button', 'class' => 'btn btn-success flat-buttons waves-effect waves-button','style'=>'border-radius: 10px;border: #f83a5b;height: 50px;background: transparent;width: 127px;color: red;font-size: 17px;font-weight: bold;']) ?>
+                                                    <?= $this->Form->button('Cancel', ['type' => 'button', 'class' => 'btn btn-success','style'=>'border-radius: 10px;border: #f83a5b;height: 50px;background: transparent;width: 127px;color: red;font-size: 17px;font-weight: bold;']) ?>
                                                 </a>
                                             </div>
                                         </div>
@@ -283,7 +292,7 @@ use Cake\Routing\Router;
                             console.log(res['id']);
                             var attachment_path = arr[0] + "//" + arr[1] + arr[2] + "/uploads/requests/-1/" + res;
                             var extension = attachment_path.split(".")[attachment_path.split(".").length-1];
-                            var html = "<tr><th>" + res + "</th><th>" + size + "KB</th><th style='text-align: right;'><a href='#' class='openfile' data-path='" + attachment_path + "' data-extension= '" + extension + "'><i class='fa fa-eye' aria-hidden='true'></i>&nbsp;&nbsp;&nbsp;View</a><a href=" + attachment_path + " download = ''><i class='fa fa-download' aria-hidden='true'></i>&nbsp;&nbsp;&nbsp;Download</a><a href='#' class='deletefile' ><i class='fa fa-times' aria-hidden='true'></i></a></th></tr>";
+                            var html = "<tr><th>" + res + "</th><th>" + size + "KB</th><th class='action'><a href='#' class='openfile' data-path='" + attachment_path + "' data-extension= '" + extension + "'><?=VIEW_ICON?>&nbsp;&nbsp;&nbsp;View</a><a href=" + attachment_path + " download = ''><?=DOWNLOAD_ICON?>&nbsp;&nbsp;&nbsp;Download</a><a href='#' class='deletefile' ><?=CLOSE_ICON?></a></th></tr>";
                             $('table tbody').append(html);
 
                         }

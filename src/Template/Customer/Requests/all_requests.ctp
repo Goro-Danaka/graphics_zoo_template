@@ -113,7 +113,7 @@ use Cake\Routing\Router;
                                             	<div class="col-md-6">
                                             		Due Requested:
                                             	</div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 text-right">
                                                 	<?php echo $due_date; ?>
                                             	</div>								                                                
                                             </div>
@@ -123,8 +123,9 @@ use Cake\Routing\Router;
                                             	<div class="col-md-6">
                                             		Date In Progress:
                                             	</div>
-                                                <div class="col-md-6">
-                                                	<?= ($request->dateinprogress) ? date('m/d/Y',strtotime($request->dateinprogress)) : ''; ?><?= ($request->dateinprogress) ? date('g:i a',strtotime($request->dateinprogress)) : ''; ?>
+                                                <div class="col-md-6 text-right">
+                                                	<?= ($request->dateinprogress) ? date('m/d/Y',strtotime($request->dateinprogress)) : ''; ?>
+                                                	<!-- <?= ($request->dateinprogress) ? date('g:i a',strtotime($request->dateinprogress)) : ''; ?> -->
                                             	</div>								                                                
                                             </div>
                                         </div>
@@ -133,7 +134,7 @@ use Cake\Routing\Router;
                                             	<div class="col-md-6">
                                             		Due Date:
                                             	</div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 text-right">
                                                 	<?php echo $due_date; ?>
                                             	</div>								                                                
                                             </div>
@@ -143,7 +144,7 @@ use Cake\Routing\Router;
                                             	<div class="col-md-6">
                                             		<p>Messages:</p>
                                             	</div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 text-right">
                                                 	<?php echo $due_date; ?>
                                             	</div>								                                                
                                             </div>
@@ -152,11 +153,11 @@ use Cake\Routing\Router;
                                     <div class="card-footer border top" style="text-align: center;">
                                         <div class="col-md-6">
                                             <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
-											 	<button class="btn btn-primary" style="font-weight: bold;font-size: 17px;border-radius:0px;background:  RGB(13,48,68);border: none;"><img style="width:20px;" src="<?= REQUEST_IMG_URL ?>image/view.png"></img><?= $view ?></button> 
+											 	<button class="btn btn-primary" style="font-weight: bold;font-size: 17px;border-radius:0px;background:  RGB(53,63,83);border: none;"><?= REVIEW_ICON ?><span style="vertical-align: middle;margin-left: 10px;"><?= $view ?></span></button> 
 		                                    </a>
 		                                </div>
 		                                <div class="col-md-6">
-                                            <?= $this->Form->postLink('<button class="btn btn-danger" style="font-weight: bold;font-size: 17px;border: none;border-radius:0px;background: #fff; color:red;"><i class="fa fa-times" style="margin-right: 5px;font-size: 15px;"></i>Cancel</button>', Router::url(['controller' => 'Requests', 'action' => 'cancleRequest', $request->id], TRUE), ['confirm' => 'Are you sure you want to cancle this request?', 'escape' => FALSE]); ?>								                                                
+                                            <?= $this->Form->postLink('<button class="btn btn-danger" style="font-weight: bold;font-size: 17px;border: none;border-radius:0px;background: #fff; color:red;"><img src="' . SITE_IMAGES_URL . 'close_button.png" style="width:20px;height:20px;"><span style="vertical-align: middle;margin-left: 10px;">Cancel</span></button>', Router::url(['controller' => 'Requests', 'action' => 'cancleRequest', $request->id], TRUE), ['confirm' => 'Are you sure you want to cancle this request?', 'escape' => FALSE]); ?>								                                                
                                         </div>
                                     </div>
                                 </div>
