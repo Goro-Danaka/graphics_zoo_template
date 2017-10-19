@@ -10,7 +10,15 @@
 <?= $this->Html->script('/theme/assets/global/plugins/jquery/dist/jquery.min.js'); ?>
 <?= $this->Html->script('/theme/assets/global/plugins/dropify/dist/js/dropify.min.js'); ?>
 <?= $this->Html->script('/theme/assets/global/plugins/tether/dist/js/tether.min.js'); ?>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<?= $this->Html->script('/assets/bower_components/popper.js/dist/umd/popper.min.js'); ?>
+<?= $this->Html->script('/assets/bower_components/PACE/pace.min.js'); ?>
+<?= $this->Html->script('/assets/bower_components/bootstrap/dist/js/bootstrap.js'); ?>
+<?= $this->Html->script('/assets/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.js'); ?>
+
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  
   <!-- <?= $this->Html->script('/assets/bower_components/bootstrap/dist/js/bootstrap.js'); ?> -->
 <?= $this->Html->script('/theme/assets/global/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js'); ?>
 <?= $this->Html->script('/theme/assets/global/plugins/switchery/dist/switchery.min.js'); ?>
@@ -57,13 +65,6 @@
 <!-- build:js assets/js/vendor.js -->
 <!-- plugins js -->
 
-<?= $this->Html->script('/assets/bower_components/popper.js/dist/umd/popper.min.js'); ?>
-<?= $this->Html->script('/assets/bower_components/PACE/pace.min.js'); ?>
-
-<?= $this->Html->script('/assets/bower_components/bootstrap/dist/js/bootstrap.js'); ?>
-
-
-<?= $this->Html->script('/assets/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.js'); ?>
 <!-- endbuild -->
 
 <!-- page plugins js -->

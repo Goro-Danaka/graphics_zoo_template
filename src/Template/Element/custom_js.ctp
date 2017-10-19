@@ -111,6 +111,86 @@ use Cake\Routing\Router;
 		
 		
 	});
+
+    jQuery('.main-content').on("click" , ".openApprovedDialog", function(){
+        var extension = jQuery(this).attr('data-extension');
+        var filepath = jQuery(this).attr('data-path');
+        var html = "";
+        if(extension == 'jpg' || extension == 'jpeg' || extension == 'png' || extension == 'JPG'){
+            jQuery('.approvedDialogBody').html('');
+            html += '<div class = "row"><div class = "col-md-4 ml-auto mr-auto"><img src="<?= SITE_IMAGES_URL . 'approved.png' ?>" style="width: 100%;margin-top: 25px;"></div><div class = "col-md-10 ml-auto mr-auto"><p style="font-size:20px;text-align:center;">Design Approved!</p></div><div class = "col-md-10 ml-auto mr-auto"><p style = "font-style:italic;">Click "Download" button to access source files and hi-resolution version of your design.</p></div><div class = "col-md-4 ml-auto mr-auto"><a href = "' + filepath + '" download id = "' + filepath + '"><img src="<?= SITE_IMAGES_URL . 'download.png' ?>" style="width: 100%;"></a></div> <div class = "col-md-10 ml-auto mr-auto"><a href="#" style="text-align:center;font-style:italic; color:green;" class="col-md-12 ml-auto mr-auto close" data-dismiss="modal"><span style="text-align: center;font-size: 15px;font-weight: unset;">Thanks, I will download this later.</span></a></div><div class = "col-md-10 ml-auto mr-auto"><p style = "font-style:italic;text-align:center;">*Please be notified that all source files will be removed after 14 days.</p></div></div>';
+            jQuery('.approvedDialogBody').html(html);
+            jQuery('#approvedDialog').modal('show'); 
+        }else if(extension == "pdf"){
+            jQuery('.approvedDialogBody').html('');
+            html += '<iframe src="'+filepath+'" style="height:500px;width:500px;margin-top: 25px;" frameborder="0"></iframe>';
+            jQuery('.approvedDialogBody').html(html);
+            jQuery('#approvedDialog').modal('show'); 
+        }else{
+            jQuery('.approvedDialogBody').html('');
+            html += '<a href="'+filepath+'" download id="'+filepath+'"></a>';
+            jQuery('.approvedDialogBody').html(html);
+            document.getElementById(filepath).click();
+        }
+        
+        
+    });
+
+    jQuery('.main-content').on("click" , ".openRevisionDialog", function(){
+        var extension = jQuery(this).attr('data-extension');
+        var filepath = jQuery(this).attr('data-path');
+        var html = "";
+        html += '<div class="row"><div class="col-md-8 ml-auto mr-auto" style="text-align:center;"><h3>Upload Image</h3>';
+        if(extension == 'jpg' || extension == 'jpeg' || extension == 'png' || extension == 'JPG'){
+            jQuery('.revisionModelBody').html('');
+            html += '<img src="'+filepath+'" style="margin-top: 25px;"></div></div>';
+            jQuery('.revisionModelBody').html(html);
+            jQuery('#revisionModel').modal('show'); 
+        }else if(extension == "pdf"){
+            jQuery('.revisionModelBody').html('');
+            html += '<iframe src="'+filepath+'" style="height:500px;width:500px;margin-top: 25px;" frameborder="0"></iframe></div></div>';
+            jQuery('.revisionModelBody').html(html);
+            jQuery('#revisionModel').modal('show'); 
+        }else{
+            jQuery('.revisionModelBody').html('');
+            html += '<a href="'+filepath+'" download id="'+filepath+'"></a></div></div>';
+            jQuery('.revisionModelBody').html(html);
+            document.getElementById(filepath).click();
+        }
+        
+        
+    });
+    jQuery('table').on("click" , ".openDecisionDialog", function(){
+        var extension = jQuery(this).attr('data-extension');
+        var filepath = jQuery(this).attr('data-path');
+        var html = "", footer = "";
+        
+
+        footer = '<div class="row"><a href="#" class="openApprovedDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal"><img src="<?= SITE_IMAGES_URL . 'approve_button.png' ?>" style="width: 100%;"></a><a href="#" class="openRevisionDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal"><img src="<?= SITE_IMAGES_URL . 'disapprove_button.png' ?>" style="width: 100%;"></a></div>';
+        //footer += '<div class="row"><p>Approving the design will give you access to it’s source files.</p></div>'
+        html += '<div class = "row"><h3 class = "col-md-8 ml-auto mr-auto" style = "text-align:center;">' + "Upload Image" + '</h3></div>';
+        if(extension == 'jpg' || extension == 'jpeg' || extension == 'png' || extension == 'JPG'){
+            jQuery('.decisionModalBody').html('');
+            html += '<img src="'+filepath+'" style="margin-top: 25px;">';
+            jQuery('.decisionModalBody').html(html);
+            jQuery('#decisionModalFooter').html(footer);            
+            jQuery('#decisionModal').modal('show'); 
+        }else if(extension == "pdf"){
+            jQuery('.decisionModalBody').html('');
+            html += '<iframe src="'+filepath+'" style="height:500px;width:500px;margin-top: 25px;" frameborder="0"></iframe>';
+            jQuery('.decisionModalBody').html(html);
+            jQuery('#decisionModalFooter').html(footer);
+            jQuery('#decisionModal').modal('show'); 
+        }else{
+            jQuery('.decisionModalBody').html('');
+            html += '<a href="'+filepath+'" download id="'+filepath+'"></a>';
+            jQuery('.decisionModalBody').html(html);
+            jQuery('#decisionModalFooter').html(footer);
+            document.getElementById(filepath).click();
+        }
+        
+        
+    });
 		
 	jQuery('.addnewimage').click(function(){
 		var html = "";

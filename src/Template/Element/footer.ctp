@@ -18,6 +18,7 @@
 
 <!-- Start of Async Drift Code -->
 <script>
+/*
     !function () {
         var t;
         if (t = window.driftt = window.drift = window.driftt || [], !t.init)
@@ -39,4 +40,5 @@
     }();
     drift.SNIPPET_VERSION = '0.3.1';
     drift.load('d6yi38hkhwsd');
+    */
 </script>

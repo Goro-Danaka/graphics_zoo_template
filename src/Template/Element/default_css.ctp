@@ -12,7 +12,6 @@
 <?= $this->Html->css('/theme/assets/global/plugins/switchery/dist/switchery.min.css'); ?>
 <?= $this->Html->css('/theme/assets/global/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css'); ?>
 <?= $this->Html->css('/theme/assets/global/plugins/dropify/dist/css/dropify.min.css'); ?>
-<?= $this->Html->css('/theme/assets/global/plugins/dropify/dist/css/dropify.min.css'); ?>
 <?= $this->Html->css('/theme/assets/global/plugins/font-awesome-4.7.0/css/font-awesome.min.css'); ?>
 <?= $this->Html->css('/theme/assets/global/plugins/bootstrap-wysiwyg/css/code_view.css'); ?>
 <?= $this->Html->css('/theme/assets/global/plugins/bootstrap-wysiwyg/css/image_manager.css'); ?>
@@ -28,10 +27,10 @@
 
 
 <!-- START PAGE PLUG-IN CSS -->
-<?php // $this->Html->css('/assets/global/plugins/font-awesome/css/font-awesome.min.css'); ?>
-<?php // $this->Html->css('/assets/global/plugins/weather-icons/css/weather-icons.min.css'); ?>
-<?php // $this->Html->css('/assets/global/plugins/weather-icons/css/weather-icons-wind.min.css'); ?>
-<?php // $this->Html->css('/assets/global/plugins/rickshaw/rickshaw.min.css'); ?>
+<?php  $this->Html->css('/assets/global/plugins/font-awesome/css/font-awesome.min.css'); ?>
+<?php  $this->Html->css('/assets/global/plugins/weather-icons/css/weather-icons.min.css'); ?>
+<?php  $this->Html->css('/assets/global/plugins/weather-icons/css/weather-icons-wind.min.css'); ?>
+<?php  $this->Html->css('/assets/global/plugins/rickshaw/rickshaw.min.css'); ?>
 <!-- END PAGE PLUG-IN CSS -->
 
 <!-- START TEMPLATE GLOBAL CSS -->

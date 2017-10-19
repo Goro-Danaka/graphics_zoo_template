@@ -59,6 +59,21 @@ use Cake\Routing\Router;
         font-size: 15px;
         margin-left: 20px;
     }
+
+    .conversation-footer {
+        height: auto!important;
+    }
+
+    .chat.open .chat-user-list {
+        left: 0px;
+    }
+
+    #communication_tab {
+        padding: 0px 100px;
+    }
+    #decisionModal .modal-content {
+        padding: 0px 70px;
+    }
 </style>
 <div class="main-content">
     <div class="container-fluid">
@@ -137,8 +152,8 @@ use Cake\Routing\Router;
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="form-1-3" class="col-md-3 control-label text-right"><label>Attachments</label></label>
-                                        <div class="col-md-9 space-left">  
+                                        <label for="form-1-3" class="col-md-3 col-sm-6 control-label text-right"><label>Attachments</label></label>
+                                        <div class="col-md-9 col-sm-6 space-left table-overflow">  
                                             <div class="image-upload">
                                                 <label class="file-input">
                                                     <image src="<?= REQUEST_IMG_URL ?>image/cloud.png" />
@@ -146,7 +161,7 @@ use Cake\Routing\Router;
                                                 </label>
                                                 <?= $this->Form->control('file[]', ['type' => 'file', 'id' => 'upload_file', 'label' => FALSE]) ?>
                                             </div>                                          
-                                            <table class="table">
+                                            <table class="table table-striped">
                                                 <thead>
                                                     <tr>
                                                         <th width="50%">Document Name</th>
@@ -404,9 +419,9 @@ use Cake\Routing\Router;
                                                                 <?php } ?>
                                                                 
                                                                         <th>
-                                                                            <a href="#" class="openfile" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=VIEW_ICON?>&nbsp;&nbsp;&nbsp;View</a>
+                                                                            <a href="#" class="openDecisionDialog" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=VIEW_ICON?>&nbsp;&nbsp;&nbsp;View</a>
                                                                             <a href="<?= $attachment_path ?>" download = ""><?=DOWNLOAD_ICON?>&nbsp;&nbsp;&nbsp;Download</a>
-                                                                            <a href="#" class="openfile" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=CLOSE_ICON?></a>
+                                                                            <a href="#" class="openDecisionDialog" data-path="<?= $attachment_path ?>" data-extension=<?= $extension ?>><?=CLOSE_ICON?></a>
                                                                         </th>
                                                                 </tr>
                                                             </a>
@@ -463,14 +478,13 @@ use Cake\Routing\Router;
                         <div id="chat" role="tabpanel" class="tab-pane fade in active show" aria-expanded="true">
                             <div class="chat open">
                                 <div class="chat-user-list scrollable ps-container ps-theme-default ps-active-y" data-ps-id="c114d0fd-1132-892e-9ca8-bf5e4eb13ab3">                                                                                               
-                                <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 463px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 260px;"></div></div></div>
                                 <div class="conversation">
                                     <div class="conversation-wrapper">
                                         <div class="conversation-header">
-                                            <a href="javascript:void(0);" class="back chat-toggle">
+                                            <!-- <a href="javascript:void(0);" class="back chat-toggle">
                                                 <i class="ti-arrow-circle-left"></i>
-                                            </a>
-                                            <span class="user-name">Jordan Hurst</span>
+                                            </a> -->
+                                            <span>Message</span>
                                         </div>
                                         <div class="conversation-body">
                                             <div class="msg">
@@ -541,22 +555,37 @@ use Cake\Routing\Router;
         </div>
     </div>
 </div>
-        <div id="myModal3" class="modal fade" role="dialog">
+        <div id="revisionModel" class="modal fade" role="dialog">
           <div class="modal-dialog">
             <?= $this->Form->create($request, ['url' => Router::url(['controller' => 'RequestFiles', 'action' => 'disapprove', 'prefix' => FALSE], TRUE), 'type' => 'file']); ?>
                 <!-- Modal content-->
                 <div class="modal-content">
-                  <div class="modal-header">
+                  <div class="modal-header revisionModelBody">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Write Disapprove Reason</h4>
                   </div>
                   <div class="modal-body">
-                  <?= $this->Form->input('reason', array('type' => 'textarea','style'=>'width:100%','required'=>true)); ?>
-                   
-                    <?= $this->Form->control('Send', ['type' => 'submit', 'id' => 'request_file_uploader_btn', 'class' => 'btn btn-success flat-buttons waves-effect waves-button', 'label' => FALSE]) ?>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Add notes for revision</label>
+                                    <input placeholder="Enter reason" name="reason" class="form-control" type="email">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6">
+                            </div>
+                            <div class="col-md-6 col-xs-6">
+                                <div class="text-right mrg-top-5">
+                                    <!-- <button type="submit" class="btn btn-primary">Create Account</button> -->
+                                    <a href="#"><img src="<?= SITE_IMAGES_URL . 'send_button.png' ?>"></a>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                                           
+                    <!-- <?= $this->Form->control('Send', ['type' => 'submit', 'id' => 'request_file_uploader_btn', 'class' => 'btn btn-success flat-buttons waves-effect waves-button', 'label' => FALSE]) ?> -->
                   </div>
                 </div>
             <?= $this->Form->hidden('request_status', ['value' => $request->status]) ?>
@@ -587,29 +616,23 @@ use Cake\Routing\Router;
             </div>
         </div>  
 
-      <!--   <div class="modal fade" id="myModalforall" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+        <div class="modal fade" id="decisionModal" style="display: none;" aria-hidden="true">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
                     <div class="modal-body">
-                        <div class="padding-15">
-                            <div class="row">
-                                    <div class="ml-auto col-md-5">
-                                        <h3 class="mrg-btm-20 mrg-top-130">Download App</h3>
-                                        <p>Would you like to accept this desgins?</p>
-                                        <div class="mrg-top-20">
-                                            <a id="approveButton" data-dismiss="modal" class="btn btn-info">Accept</a>
-                                            <a href="" data-dismiss="modal" class="btn btn-default">Close</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 text-center">
-                                        <img class="img-fluid mrg-horizon-auto" src="assets/images/others/img-2.png" id = "approve_image" alt="">
-                                    </div>
-                            </div>
+                        <div class="decisionModalBody">                            
                         </div>
+                    </div>
+                    <div class="modal-footer" id ="decisionModalFooter">
+                        
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
 
@@ -619,20 +642,15 @@ use Cake\Routing\Router;
 		echo '<input type="hidden" value="'.$diff.'" id="updatedtime">';
 	
 ?>
-<div id="myModal" class="modal fade" role="dialog" style="margin-top:20%;">
+<div id="approvedDialog" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
-      
+    <div class="modal-content">    
       <div class="modal-body">
-        <p style="color: #000;font-size: 18px;">Thank you for approving the Design Now you can download.</p>
-      </div>
-      <div class="modal-footer">
-		<a style="float:left;" href="<?= Router::url(['controller' => 'Requests', 'action' => 'allApprovedRequests', 'prefix' => 'customer']); ?>"><button style="background:#337ab7;" type="button" class="btn btn-default">Download</button></a>
-		
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+        <div class="approvedDialogBody">
+        </div>        
+      </div>      
     </div>
 
   </div>
