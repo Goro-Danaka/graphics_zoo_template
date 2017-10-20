@@ -4,7 +4,15 @@ use Cake\Routing\Router;
 ?>
 
 <style type="text/css">
+table th {
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+}
 
+table td {
+    text-align: center;
+}
 </style>
 <div class="main-content">
     <div class="container-fluid">
@@ -217,10 +225,10 @@ use Cake\Routing\Router;
 																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_WITHOUT_TIME) : ''; ?><br/><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_TIME_ONLY_WITH_AM_PM) : ''; ?></td>  
 																<td  style="color:<?php echo $txtcolor; ?>;"></td>  
 								                                <td>
-								                                	<a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
+								                                	<a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewPendingRequest', $request->id]); ?>">                    
 																	 	<button class="btn-sm btn-primary" style="width:100px;font-weight: bold;font-size: 17px;border-radius:0px;background:  RGB(53,63,83);border: none;"><?= REVIEW_ICON ?><span style="vertical-align: middle;margin-left: 10px;">Review</span></button> 
 								                                    </a>
-								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
+								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewPendingRequest', $request->id]); ?>">                    
 																	 	<button class="btn-sm btn-primary" style="font-weight: bold;font-size: 17px;border-radius:0px;background: transparent; color:red;border: none;"><img src="<?=SITE_IMAGES_URL?>close_button.png" style="width:20px;height:20px;"><span style="vertical-align: middle;margin-left: 10px;"></span></button> 
 								                                    </a>
 								                                </td>
@@ -320,10 +328,10 @@ use Cake\Routing\Router;
 																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_WITHOUT_TIME) : ''; ?><br/><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_TIME_ONLY_WITH_AM_PM) : ''; ?></td>  
 																<td  style="color:<?php echo $txtcolor; ?>;"></td>  																
 								                                <td>
-								                                   <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
+								                                   <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewPendingRequest', $request->id]); ?>">                    
 																	 	<button class="btn-sm btn-primary" style="width:100px;font-weight: bold;font-size: 17px;border-radius:0px;background:  RGB(53,63,83);border: none;"><?= REVIEW_ICON ?><span style="vertical-align: middle;margin-left: 10px;">Review</span></button> 
 								                                    </a>
-								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
+								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewPendingRequest', $request->id]); ?>">                    
 																	 	<button class="btn-sm btn-primary" style="font-weight: bold;font-size: 17px;border-radius:0px;background: transparent; color:red;border: none;"><img src="<?=SITE_IMAGES_URL?>close_button.png" style="width:20px;height:20px;"><span style="vertical-align: middle;margin-left: 10px;"></span></button> 
 								                                    </a>
 								                                </td>

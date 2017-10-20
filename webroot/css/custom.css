@@ -198,12 +198,3 @@ body:not(.nav-menu-icon) .site-menu .sub-item.active .sub-menu li::after{
     overflow: auto;
 }
 
-table th {
-    font-weight: bold;
-    font-size: 17px;
-    text-align: center;
-}
-
-table td {
-    text-align: center;
-}
