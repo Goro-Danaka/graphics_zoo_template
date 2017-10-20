@@ -72,7 +72,7 @@ use Cake\Routing\Router;
         padding: 0px 100px;
     }
     #decisionModal .modal-content {
-        padding: 0px 70px;
+        padding: 0px 150px;
     }
     th.action a{
         margin-left: 20px; 
@@ -87,7 +87,7 @@ use Cake\Routing\Router;
     }
 
     .chat-detail {
-        width: 300px!important;
+        width: 50%!important;
         border-radius: 35px 0px 35px 35px!important;        
         background-color: RGB(135,139,167)!important;
         padding: 15px!important;
@@ -620,14 +620,13 @@ use Cake\Routing\Router;
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title"></h4>
                     </div>
                     <div class="modal-body">
                         <div class="decisionModalBody">                            
                         </div>
                     </div>
-                    <div class="modal-footer" id ="decisionModalFooter">
+                    <div class="modal-footer row" id ="decisionModalFooter" style="border: none;margin:0px;">
                         
                     </div>
                 </div>

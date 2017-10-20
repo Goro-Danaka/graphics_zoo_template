@@ -163,18 +163,22 @@ use Cake\Routing\Router;
         
         
     });
+
+    
+
+
     jQuery('table').on("click" , ".openDecisionDialog", function(){
         var extension = jQuery(this).attr('data-extension');
         var filepath = jQuery(this).attr('data-path');
         var html = "", footer = "";
         
 
-        footer = '<div class="row"><button class="btn openApprovedDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal">Approve Design</button><button class="btn openRevisionDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal">Ask For Revision</button></div>';
+        footer = '<div class="col-md-12 mr-auto ml-auto"><div class="text-left mrg-top-5 col-md-6"><button type="submit" class="btn openApprovedDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal">Approved Designs</button></div><div class="text-right mrg-top-5 col-md-6"><button type="submit" class="btn openRevisionDialog" data-extension = "'+extension+'" data-path = "' + filepath + '" data-dismiss="modal">Disapproved Designs</button></div></div><div class="col-md-12 mr-auto ml-auto"><p style="text-align:center;font-style:italic;color:black;margin-top:5px;">Approving the design will give you access to it’s source files.</p></div>';
         //footer += '<div class="row"><p>Approving the design will give you access to it’s source files.</p></div>'
         html += '<div class = "row"><h3 class = "col-md-8 ml-auto mr-auto" style = "text-align:center;">' + "Upload Image" + '</h3></div>';
         if(extension == 'jpg' || extension == 'jpeg' || extension == 'png' || extension == 'JPG'){
             jQuery('.decisionModalBody').html('');
-            html += '<img src="'+filepath+'" style="margin-top: 25px;">';
+            html += '<img src="'+filepath+'" style="margin-top: 25px;border-radius: 5px;width: 450px;">';
             jQuery('.decisionModalBody').html(html);
             jQuery('#decisionModalFooter').html(footer);            
             jQuery('#decisionModal').modal('show'); 
