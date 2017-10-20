@@ -34,22 +34,22 @@ use Cake\Routing\Router;
                                             <div class="col-xl-3"><label style="color: #000;float: right;margin-top: 5px;">Old Password</label></div>
                                             <div class="col-xl-7">
                                                 <div class="form-group">
-                                                    <?= $this->Form->input('old_password', ['type' => 'password', 'id' => 'old_password', 'class' => 'form-control', 'placeholder' => "Enter old Password", 'label' => FALSE,'style'=>'border-radius: 20px;']); ?>
+                                                    <?= $this->Form->input('old_password', ['type' => 'password', 'id' => 'old_password', 'class' => 'form-control', 'placeholder' => "Enter old Password", 'label' => FALSE]); ?>
                                                 </div>
                                             </div>
                                              <div class="col-xl-3"><label style="color: #000;float: right;margin-top: 5px;">New Password</label></div>
                                             <div class="col-xl-7">
                                                 <div class="form-group">
-                                                    <?= $this->Form->input('new_password', ['type' => 'password', 'id' => 'new_password', 'class' => 'form-control', 'placeholder' => "Enter New Password", 'label' => FALSE,'style'=>'border-radius: 20px;']); ?>
+                                                    <?= $this->Form->input('new_password', ['type' => 'password', 'id' => 'new_password', 'class' => 'form-control', 'placeholder' => "Enter New Password", 'label' => FALSE]); ?>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3"><label style="color: #000;float: right;margin-top: 5px;">Confirm Password</label></div>
                                             <div class="col-xl-7">
                                                 <div class="form-group">
-                                                    <?= $this->Form->input('confirm_password', ['type' => 'password', 'id' => 'confirm_password', 'class' => 'form-control', 'placeholder' => "Enter Confirm New Password", 'label' => FALSE, 'style'=>'border-radius: 20px;']); ?>
+                                                    <?= $this->Form->input('confirm_password', ['type' => 'password', 'id' => 'confirm_password', 'class' => 'form-control', 'placeholder' => "Enter Confirm New Password", 'label' => FALSE]); ?>
                                                 </div>
                                                 <div class="form-group" style="text-align: center;">
-                                                    <?= $this->Form->submit('Change Password', ['class' => 'btn btn-primary site-btn','style'=>'border-radius: 20px;height: 40px;font-weight: 500;font-size: 17px;background: #ec1c41;border: none;']) ?>
+                                                    <?= $this->Form->submit('Change Password', ['class' => 'btn btn-primary site-btn','style'=>'border-radius: 10px;width:100%;height: 40px;font-weight: 500;font-size: 17px;background: #ec1c41;border: none;']) ?>
                                                 </div>
                                             </div>
                                     
@@ -77,26 +77,26 @@ use Cake\Routing\Router;
                                             <div class="col-xl-7">
                                                 <div class="form-group">
                                                 <!--<input type="text" class="form-control" data-validation="required" placeholder="Enter Category Name">-->
-                                                <?= $this->Form->input('firstname', ['type' => 'text', 'class' => 'form-control', 'data-validation' => 'required', 'placeholder' => "Enter old Password", 'value' => $firstname, 'label' => FALSE,'style'=>'border-radius: 20px;']); ?>
+                                                <?= $this->Form->input('firstname', ['type' => 'text', 'class' => 'form-control', 'data-validation' => 'required', 'placeholder' => "Enter old Password", 'value' => $firstname, 'label' => FALSE]); ?>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3"><label style="color: #000;float: right;margin-top: 5px;">Last Name</label></div>
                                             <div class="col-xl-7">
                                                 <div class="form-group">
-                                                <?= $this->Form->input('lastname', ['type' => 'text', 'class' => 'form-control', 'data-validation' => 'required', 'placeholder' => "Enter New Password", 'value' => $lastname, 'label' => FALSE,'style'=>'border-radius: 20px;']); ?>
+                                                <?= $this->Form->input('lastname', ['type' => 'text', 'class' => 'form-control', 'data-validation' => 'required', 'placeholder' => "Enter New Password", 'value' => $lastname, 'label' => FALSE]); ?>
                                                 </div>
                                             </div>
                                              <div class="col-xl-3"><label style="color: #000;float: right;margin-top: 5px;">Phone</label></div>
                                             <div class="col-xl-7">
                                                 <div class="form-group">
-                                                <?= $this->Form->input('phone', ['type' => 'text', 'class' => 'form-control', 'data-validation' => 'required', 'placeholder' => "Enter Confirm New Password", 'value' => $phone, 'label' => FALSE,'style'=>'border-radius: 20px;']); ?>
+                                                <?= $this->Form->input('phone', ['type' => 'text', 'class' => 'form-control', 'data-validation' => 'required', 'placeholder' => "Enter Confirm New Password", 'value' => $phone, 'label' => FALSE]); ?>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3"></div>
                                             <div class="col-xl-7">
                                                 <div class="form-group" style="text-align: center;">
                                                 <!--<button type="submit" class="btn btn-primary site-btn">Submit</button>-->
-                                                <?= $this->Form->submit('Edit Profile', ['class' => 'btn btn-primary site-btn', 'name' => 'update_profile','style'=>'border-radius: 20px;height: 40px;font-weight: 500;font-size: 17px;background: #ec1c41;border: none;']) ?>
+                                                <?= $this->Form->submit('Edit Profile', ['class' => 'btn btn-primary site-btn', 'name' => 'update_profile','style'=>'border-radius: 10px;width:100%;height: 40px;font-weight: 500;font-size: 17px;background: #ec1c41;border: none;']) ?>
                                                 </div>
                                             </div>
                                             <!--</form>-->

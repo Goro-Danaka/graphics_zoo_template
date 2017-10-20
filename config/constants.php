@@ -76,9 +76,9 @@ const DEVELOPMENT_MODE = FALSE;
  * ********************************************************** */
 const DATE_MYSQL_FORMAT = 'Y-m-d H:i:s';
 const DATE_FORMAT_WITH_TIME = 'Y-m-d H:i:s';
-const DATE_FORMAT_WITHOUT_TIME = 'Y-m-d';
+const DATE_FORMAT_WITHOUT_TIME = 'd/m/Y';
 const DATE_FORMAT_TIME_ONLY = 'H:i:s';
-const DATE_FORMAT_TIME_ONLY_WITH_AM_PM = 'H:i:s A';
+const DATE_FORMAT_TIME_ONLY_WITH_AM_PM = 'H:i A';
 
 const DATE_FORMAT_TIMELINE_DAY = 'd';
 const DATE_FORMAT_TIMELINE_WEEK_DAY = 'l';

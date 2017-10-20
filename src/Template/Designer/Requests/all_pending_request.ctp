@@ -4,9 +4,7 @@ use Cake\Routing\Router;
 ?>
 
 <style type="text/css">
-	.nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover {
-		border-bottom: 3px solid RGB(226,33,68)!important;
-	}
+
 </style>
 <div class="main-content">
     <div class="container-fluid">
@@ -42,16 +40,15 @@ use Cake\Routing\Router;
 	                                            <table  class="table table-lg table-hover dt-opt">
 	                                                <thead>
 	                                                    <tr>
-	                                                    	<th style="padding-right: 0px;">Id</th>
-								                            <th style="padding-right: 0px;">Title</th>
-								                            <th style="padding-right: 0px;">Description</th>  
-															<th style="padding-right: 0px;">Customer Name</th>
-															<th style="padding-right: 0px;">Requested<br/><span style="font-size:10px;">(MM/DD/YYYY)</span></th>
-															<th style="padding-right: 0px;">In Progress<br/><span style="font-size:10px;">(MM/DD/YYYY)</span></th>
-															<th style="padding-right: 0px;">Due Date<br/><span style="font-size:10px;">(MM/DD/YYYY)</span></th>
-															<th style="padding-right: 0px;">Status</th>
-															<th style="padding-right: 0px;">No. of New Messages(<?= $total_unread_message ?>)</th>
-								                            <th>Action</th>                            
+								                            <th class="text-left">Id</th>
+								                            <th class="text-left">Status</th>
+								                            <th class="text-left">Title</th>
+								                            <th class="text-left">Description</th>  
+														    <th>Requested</th>
+															<th>In Progress</th>
+															<th>Due Date</th>
+															<th>Actions</th>         
+															<th>Messages</th>                  
 	                                                    </tr>
 	                                                </thead>
 	                                                <tbody>
@@ -59,6 +56,8 @@ use Cake\Routing\Router;
 								                        <?php foreach ($requests as $request): ?>
 														<?php 
 															$due_date = "";
+															$title = strlen($request->title) >= 15? substr($request->title, 0, 10) . "..." : $request->title;
+															$description = strlen($request->description) >= 20? substr($request->description, 0, 15) . "..." : $request->description; 
 															if($request->status_designer == "pending") 
 															{ $status = "Pending"; $bgcolor=""; $textcolor=""; $view = "View"; $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;"; } 
 															elseif($request->status_designer == "running") 
@@ -68,59 +67,63 @@ use Cake\Routing\Router;
 																$status = "In Progress";
 																$bgcolor="orange";
 																$textcolor="#000";
-																 $view = "View"; 
-																  $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: orange;";
+																$view = "View"; 
+																$button="color: RGB(248,148,30);    margin: auto;";
 																
 															}elseif($request->status_designer == "pendingforapprove")
 															{
 																$status = "Waiting for Approval";
 																$bgcolor="lightgreen";
 																$textcolor="#000";
-																 $view = "Review"; 
-																 $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: lightgreen;";
+																$view = "Review"; 
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "checkforapprove"){
 																$status = "Waiting for Approval";
 																$bgcolor="lightgreen";
 																$textcolor="#000";
 																$view = "Review"; 
-																 $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: lightgreen;";
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "disapprove"){
 																$status = "Revision";
 																$bgcolor="coral";
 																$textcolor="#000";
 																$view = "D"; 
-																 $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: coral;";
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "assign"){
 																$status = "In Queue";
 																$bgcolor="lightgray";
 																$textcolor="#000";
 																$view = "D"; 
-																$button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: lightgray;";
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}else{
 																$status = "";
 																$bgcolor="";
 																$textcolor="";
 																$view = "View"; 
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}
 														?>
 								                            <tr>
-								                                <td style="color:<?= $textcolor ?>"><?= $i++; ?></td>                                
-								                                <td style="color:<?= $textcolor ?>"><?= $request->title ?></td>
-								                                <td style="color:<?= $textcolor ?>"><?= $request->description ?></td>   
-																<td style="color:<?php echo $txtcolor; ?>;"><?= ($request->customer) ? $request->customer->first_name . ' ' . $request->customer->last_name : '' ?></td> 
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><?= $i++; ?></td>                                
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><button class="btn btn-deafult" style="<?= $button ?>"><?= $status ?></button></td>
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><?= $request->title ?></td>
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><?= $request->description ?></td>   
 																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->created) ? date('m/d/Y',strtotime($request->created)) : ''; ?><br/><?= ($request->created) ? date('g:i a',strtotime($request->created)) : ''; ?></td>  
 																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->dateinprogress) ? date('m/d/Y',strtotime($request->dateinprogress)) : ''; ?><br/><?= ($request->dateinprogress) ? date('g:i a',strtotime($request->dateinprogress)) : ''; ?></td>  
 																<td  style="color:<?php echo $txtcolor; ?>;"><?php echo $due_date; ?></td>  
-																<td style="color:<?= $textcolor ?>"><button class="btn btn-deafult" style="<?= $button ?>"><?= $status ?></button></td>
+																<td>
+								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewPendingRequest', $request->id]); ?>">                    
+																	 	<button class="btn-sm btn-primary" style="width:100px;font-weight: bold;font-size: 17px;border-radius:0px;background:  RGB(53,63,83);border: none;"><?= REVIEW_ICON ?><span style="vertical-align: middle;margin-left: 10px;">Review</span></button> 
+								                                    </a>
+								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewPendingRequest', $request->id]); ?>">                    
+																	 	<button class="btn-sm btn-primary" style="font-weight: bold;font-size: 17px;border-radius:0px;background: transparent; color:red;border: none;"><img src="<?=SITE_IMAGES_URL?>close_button.png" style="width:20px;height:20px;"><span style="vertical-align: middle;margin-left: 10px;"></span></button> 
+								                                    </a>
+								                                </td>
 																<td style="color:<?php echo $txtcolor; ?>;"><?php if($admin_unread_message_count_array[$request->id]!=0) { ?>
 																 <button class="btn btn-primary" style="border-radius:20px;background:orange;border:none;">
 																		<?= $admin_unread_message_count_array[$request->id] ?> Messages</button> 
-																<?php	} ?></td>
-								                                <td>
-								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewPendingRequest', $request->id]); ?>">
-								                                        <button class="btn btn-primary" style="border-radius:20px;background:#3e3c3c;border: none;"><img style="width:20px;" src="<?= REQUEST_IMG_URL ?>image/view.png">View</button> 
-								                                    </a>
-								                                </td>
+																<?php	} ?>
+																</td>								                                
 								                            </tr>        
 								                        <?php endforeach; ?>
 	                                                </tbody>
@@ -142,22 +145,24 @@ use Cake\Routing\Router;
 	                                            <table class="table table-lg table-hover  dt-opt">
 					                                <thead>
 								                        <tr>
-								                            <th>Id</th>
-								                            <th>Title</th>
-								                            <th>Description</th>  
-															<th>Customer Name</th>
-															<th>Date Requested</th>
-															<th>Date In Progress</th>
+								                            <th class="text-left">Id</th>
+								                            <th class="text-left">Status</th>
+								                            <th class="text-left">Title</th>
+								                            <th class="text-left">Description</th>  
+														    <th>Requested</th>
+															<th>In Progress</th>
 															<th>Due Date</th>
-															<th>Status</th>
-															<th>No. of New Messages(<?= $total_assign_message ?>)</th>
-								                            <th>Action</th>         
+															<th>Actions</th>         
+															<th>Messages</th>
+								                            
 								                        </tr>
 								                    </thead>
 								                    <tbody>
 								                        <?php $i = 1; ?>
 								                        <?php foreach ($inprogressrequest as $request): ?>
 														<?php 
+															$title = strlen($request->title) >= 15? substr($request->title, 0, 10) . "..." : $request->title;
+															$description = strlen($request->description) >= 20? substr($request->description, 0, 15) . "..." : $request->description; 
 															if($request->status_designer == "pending") 
 															{ $status = "Pending"; $bgcolor=""; $textcolor=""; $view = "View"; $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;"; } 
 															elseif($request->status_designer == "running") 
@@ -167,58 +172,62 @@ use Cake\Routing\Router;
 																$status = "In Progress";
 																$bgcolor="orange";
 																$textcolor="#000";
-																 $view = "View"; 
-																  $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: orange;";
+																$view = "View"; 
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "pendingforapprove")
 															{
 																$status = "Waiting for Approval";
 																$bgcolor="lightgreen";
 																$textcolor="#000";
-																 $view = "Review"; 
-																 $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: lightgreen;";
+																$view = "Review"; 
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "checkforapprove"){
 																$status = "Waiting for Approval";
 																$bgcolor="lightgreen";
 																$textcolor="#000";
 																$view = "Review"; 
-																 $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: lightgreen;";
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "disapprove"){
 																$status = "Revision";
 																$bgcolor="coral";
 																$textcolor="#000";
 																$view = "D"; 
-																 $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: coral;";
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "assign"){
 																$status = "In Queue";
 																$bgcolor="lightgray";
 																$textcolor="#000";
 																$view = "D"; 
-																$button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: lightgray;";
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}else{
 																$status = "";
 																$bgcolor="";
 																$textcolor="";
 																$view = "View"; 
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}
 														?>
 								                            <tr>
-								                                <td style="color:<?= $textcolor ?>"><?= $i++; ?></td>                                
-								                                <td style="color:<?= $textcolor ?>"><?= $request->title ?></td>
-								                                <td style="color:<?= $textcolor ?>"><?= $request->description ?></td>   
-																<td style="color:<?php echo $txtcolor; ?>;"><?= ($request->customer) ? $request->customer->first_name . ' ' . $request->customer->last_name : '' ?></td> 
-																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->created) ? $request->created->format(DATE_FORMAT_WITH_TIME) : ''; ?></td>  
-																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_WITH_TIME) : ''; ?></td>  
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><?= $i++; ?></td>                
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><span  style="<?= $button ?>"><?= $status ?></span></td>                
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><?= $title ?></td>
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><?= $description ?></td>   
+																
+																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->created) ? $request->created->format(DATE_FORMAT_WITHOUT_TIME) : ''; ?><br/><?= ($request->created) ? $request->created->format(DATE_FORMAT_TIME_ONLY_WITH_AM_PM) : ''; ?></td>  
+																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_WITHOUT_TIME) : ''; ?><br/><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_TIME_ONLY_WITH_AM_PM) : ''; ?></td>  
 																<td  style="color:<?php echo $txtcolor; ?>;"></td>  
-																<td style="color:<?= $textcolor ?>"><button class="btn btn-deafult" style="<?= $button ?>"><?= $status ?></button></td>
-																<td style="color:<?php echo $txtcolor; ?>;"><?php if($admin_unread_message_count_array[$request->id]!=0) { ?>
+								                                <td>
+								                                	<a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
+																	 	<button class="btn-sm btn-primary" style="width:100px;font-weight: bold;font-size: 17px;border-radius:0px;background:  RGB(53,63,83);border: none;"><?= REVIEW_ICON ?><span style="vertical-align: middle;margin-left: 10px;">Review</span></button> 
+								                                    </a>
+								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
+																	 	<button class="btn-sm btn-primary" style="font-weight: bold;font-size: 17px;border-radius:0px;background: transparent; color:red;border: none;"><img src="<?=SITE_IMAGES_URL?>close_button.png" style="width:20px;height:20px;"><span style="vertical-align: middle;margin-left: 10px;"></span></button> 
+								                                    </a>
+								                                </td>
+								                                <td style="color:<?php echo $txtcolor; ?>;"><?php if($admin_unread_message_count_array[$request->id]!=0) { ?>
 																 <button class="btn btn-primary" style="border-radius:20px;background:orange;border:none;">
 																		<?= $admin_unread_message_count_array[$request->id] ?> Messages</button> 
 																<?php	} ?></td>
-								                                <td>
-								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewPendingRequest', $request->id]); ?>">
-								                                        <button class="btn btn-primary" style="border-radius:20px;background:#3e3c3c;border: none;"><img style="width:20px;" src="<?= REQUEST_IMG_URL ?>image/view.png">View</button> 
-								                                    </a>
-								                                </td>
 								                            </tr>        
 								                        <?php endforeach; ?>
 								                    </tbody>
@@ -240,23 +249,24 @@ use Cake\Routing\Router;
 	                                        <div class="table-overflow">
 	                                            <table class="table table-lg table-hover dt-opt">
 					                                <thead>
-								                        <tr>
-								                            <th>Id</th>
-								                            <th>Title</th>
-								                            <th>Description</th>  
-															<th>Customer Name</th>
-															<th>Date Requested</th>
-															<th>Date In Progress</th>
+								                        <tr>  
+								                            <th class="text-left">Id</th>
+								                            <th class="text-left">Status</th>
+								                            <th class="text-left">Title</th>
+								                            <th class="text-left">Description</th>  
+														    <th>Requested</th>
+															<th>In Progress</th>
 															<th>Due Date</th>
-															<th>Status</th>
-															<th>No. of New Messages(<?= $total_checkforapprove_message ?>)</th>
-								                            <th>Action</th>       
+															<th>Actions</th>         
+															<th>Messages</th>
 								                        </tr>
 								                    </thead>
 								                    <tbody>
 								                        <?php $i = 1; ?>
 								                        <?php foreach ($checkforapproverequests as $request): ?>
 														<?php 
+															$title = strlen($request->title) >= 15? substr($request->title, 0, 10) . "..." : $request->title;
+															$description = strlen($request->description) >= 20? substr($request->description, 0, 15) . "..." : $request->description; 
 															if($request->status_designer == "pending") 
 															{ $status = "Pending"; $bgcolor=""; $textcolor=""; $view = "View"; $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;"; } 
 															elseif($request->status_designer == "running") 
@@ -266,58 +276,62 @@ use Cake\Routing\Router;
 																$status = "In Progress";
 																$bgcolor="orange";
 																$textcolor="#000";
-																 $view = "View"; 
-																  $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: orange;";
+																$view = "View"; 
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "pendingforapprove")
 															{
 																$status = "Waiting for Approval";
 																$bgcolor="lightgreen";
 																$textcolor="#000";
-																 $view = "Review"; 
-																 $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: lightgreen;";
+																$view = "Review"; 
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "checkforapprove"){
 																$status = "Waiting for Approval";
 																$bgcolor="lightgreen";
 																$textcolor="#000";
 																$view = "Review"; 
-																 $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: lightgreen;";
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "disapprove"){
 																$status = "Revision";
 																$bgcolor="coral";
 																$textcolor="#000";
 																$view = "D"; 
-																 $button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: coral;";
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}elseif($request->status_designer == "assign"){
 																$status = "In Queue";
 																$bgcolor="lightgray";
 																$textcolor="#000";
 																$view = "D"; 
-																$button="color: rgb(255, 255, 255);    margin: auto;    border-radius: 20px;background: lightgray;";
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}else{
 																$status = "";
 																$bgcolor="";
 																$textcolor="";
 																$view = "View"; 
+																$button="color: RGB(248,148,30);    margin: auto;";
 															}
 														?>
 								                            <tr>
-								                                <td style="color:<?= $textcolor ?>"><?= $i++; ?></td>                                
-								                                <td style="color:<?= $textcolor ?>"><?= $request->title ?></td>
-								                                <td style="color:<?= $textcolor ?>"><?= $request->description ?></td>   
-																<td style="color:<?php echo $txtcolor; ?>;"><?= ($request->customer) ? $request->customer->first_name . ' ' . $request->customer->last_name : '' ?></td> 
-																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->created) ? $request->created->format(DATE_FORMAT_WITH_TIME) : ''; ?></td>  
-																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_WITH_TIME) : ''; ?></td>  
-																<td  style="color:<?php echo $txtcolor; ?>;"></td>  
-																<td style="color:<?= $textcolor ?>"><button class="btn btn-deafult" style="<?= $button ?>"><?= $status ?></button></td>
-																<td style="color:<?php echo $txtcolor; ?>;"><?php if($admin_unread_message_count_array[$request->id]!=0) { ?>
-																 <button class="btn btn-primary" style="border-radius:20px;background:orange;border:none;">
-																		<?= $admin_unread_message_count_array[$request->id] ?> Messages</button> 
-																<?php	} ?></td>
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><?= $i++; ?></td>
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><span  style="<?= $button ?>"><?= $status ?></span></td>                                
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><?= $request->title ?></td>
+								                                <td class="text-left" style="color:<?= $textcolor ?>"><?= $request->description ?></td>   
+																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->created) ? $request->created->format(DATE_FORMAT_WITHOUT_TIME) : ''; ?><br/><?= ($request->created) ? $request->created->format(DATE_FORMAT_TIME_ONLY_WITH_AM_PM) : ''; ?></td>  
+																<td  style="color:<?php echo $txtcolor; ?>;"><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_WITHOUT_TIME) : ''; ?><br/><?= ($request->dateinprogress) ? $request->dateinprogress->format(DATE_FORMAT_TIME_ONLY_WITH_AM_PM) : ''; ?></td>  
+																<td  style="color:<?php echo $txtcolor; ?>;"></td>  																
 								                                <td>
-								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewPendingRequest', $request->id]); ?>">
-								                                        <button class="btn btn-primary" style="border-radius:20px;background:#3e3c3c;border: none;"><img style="width:20px;" src="<?= REQUEST_IMG_URL ?>image/view.png">View</button> 
+								                                   <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
+																	 	<button class="btn-sm btn-primary" style="width:100px;font-weight: bold;font-size: 17px;border-radius:0px;background:  RGB(53,63,83);border: none;"><?= REVIEW_ICON ?><span style="vertical-align: middle;margin-left: 10px;">Review</span></button> 
+								                                    </a>
+								                                    <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
+																	 	<button class="btn-sm btn-primary" style="font-weight: bold;font-size: 17px;border-radius:0px;background: transparent; color:red;border: none;"><img src="<?=SITE_IMAGES_URL?>close_button.png" style="width:20px;height:20px;"><span style="vertical-align: middle;margin-left: 10px;"></span></button> 
 								                                    </a>
 								                                </td>
+								                                <td style="color:<?php echo $txtcolor; ?>;"><?php if($admin_unread_message_count_array[$request->id]!=0) { ?>
+																 <button class="btn btn-primary" style="border-radius:20px;background:orange;border:none;">
+																		<?= $admin_unread_message_count_array[$request->id] ?> Messages</button> 
+																<?php	} ?>
+																</td>
 								                            </tr>        
 								                        <?php endforeach; ?>
 								                    </tbody>

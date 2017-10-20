@@ -187,3 +187,23 @@ body:not(.nav-menu-icon) .site-menu .sub-item.active .sub-menu li::after{
         display: none;
     }
 }
+
+
+.nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover {
+    border-bottom: 3px solid RGB(226,33,68)!important;
+}
+
+
+.table-overflow {
+    overflow: auto;
+}
+
+table th {
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+}
+
+table td {
+    text-align: center;
+}
