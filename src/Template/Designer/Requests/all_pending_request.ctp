@@ -3,6 +3,11 @@
 use Cake\Routing\Router;
 ?>
 
+<style type="text/css">
+	.nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-item.open .nav-link:hover, .nav-tabs .nav-link.active, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-link.active:hover {
+		border-bottom: 3px solid RGB(226,33,68)!important;
+	}
+</style>
 <div class="main-content">
     <div class="container-fluid">
         <div class="page-title">

@@ -8,9 +8,6 @@
 <!-- START CORE JAVASCRIPT -->
 <!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <?= $this->Html->script('/theme/assets/global/plugins/jquery/dist/jquery.min.js'); ?>
-<?= $this->Html->script('/theme/assets/global/plugins/dropify/dist/js/dropify.min.js'); ?>
-<?= $this->Html->script('/theme/assets/global/plugins/tether/dist/js/tether.min.js'); ?>
-
 
 <?= $this->Html->script('/assets/bower_components/popper.js/dist/umd/popper.min.js'); ?>
 <?= $this->Html->script('/assets/bower_components/PACE/pace.min.js'); ?>
