@@ -119,10 +119,10 @@ use Cake\Routing\Router;
 						//echo $request->status;
 					?>
 
-                            <div class="col-md-4">
+                            <div class="col-lg-4 col-md-6 col-xs-12">
                                 <div class="card" style="font-size: 19px;border: 3px solid #e6ecf5;">
                                 	<div class="card-block" >
-                                		<h4 class="card-title" style="font-size: 36px;"><?= $request->title?></h4>
+                                		<h6 class="card-title" style="font-size: 36px;"><?= $request->title?></h6>
                                 		<p style="color: <?=$button?>; font-size: 15px;"><?= $status?></p>
                                 		<p class="card-des"><?= $request->description?></p>
                                 	</div>

@@ -88,6 +88,22 @@ use Cake\Routing\Router;
 
     .chat-detail {
         width: 300px!important;
+        border-radius: 35px 0px 35px 35px!important;        
+        background-color: RGB(135,139,167)!important;
+        padding: 15px!important;
+    }
+
+    .chat-detail::before {
+        border-color:  transparent transparent transparent RGB(135,139,167)!important;
+    }
+
+    .chat-detail p {
+        color: white;
+    }
+
+    .message-page.vertion-2 .message-rightbar {
+        border-left: none;
+        border-right: none;
     }
 </style>
 <div class="main-content">
@@ -499,7 +515,23 @@ use Cake\Routing\Router;
                                         </div>    
                                         <div class="col-md-12">
                                             <div class="type-message">
-                                                <input class="chat-input float-xs-left" placeholder="Type a Messages">
+                                                <div class="row">
+                                                    <div class="col-md-10 ml-auto mr-auto">
+                                                        <div class="form-group">
+                                                            <input placeholder="Type a message" name="reason" class="form-control" type="email">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-10 mr-auto ml-auto">
+                                                        <div class="text-left mrg-top-5">
+                                                            <button type="submit" class="btn" style="background-color: RGB(229,31,68);color: white;"><img src="<?= SITE_IMAGES_URL . 'send_button.png' ?>" style="width: 20px;height: 23px;">&nbsp;&nbsp;&nbsp;Send to Designer</button>
+                                                            
+                                                            <!-- <a href="#"><img src="<?= SITE_IMAGES_URL . 'send_button.png' ?>"></a> -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <input class="chat-input float-xs-left" placeholder="Type a Messages">
                                                 <span class="chat-type float-xs-right">
                                                     <a href="javascript:void(0);" class="send_chat_data_customer">
                                                     
@@ -509,7 +541,7 @@ use Cake\Routing\Router;
                                                      
                                                         <button class="btn btn-primary">Send to Designer</button>
                                                     </a>
-                                                </span>
+                                                </span> -->
                                             </div>
                                         </div>
                                     </div>

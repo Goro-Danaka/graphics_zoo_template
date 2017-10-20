@@ -140,10 +140,13 @@ use Cake\Routing\Router;
         var extension = jQuery(this).attr('data-extension');
         var filepath = jQuery(this).attr('data-path');
         var html = "";
-        html += '<div class="col-md-8 ml-auto mr-auto"><div class="col-md-12 ml-auto mr-auto" style="text-align:center;"><h3>Upload Image</h3>';
+        var arr = filepath.split("/");
+        var path = arr[arr.length-1];
+
+        html += '<div class="col-md-8 ml-auto mr-auto"><div class="col-md-12 ml-auto mr-auto" style="text-align:center;"><h2 style="padding:10px;">'+path+'</h2>';
         if(extension == 'jpg' || extension == 'jpeg' || extension == 'png' || extension == 'JPG'){
             jQuery('.revisionModelBody').html('');
-            html += '<img src="'+filepath+'" style="margin-top: 25px;"></div></div>';
+            html += '<img src="'+filepath+'" style="margin-top: 25px;border-radius: 5px;width: 360px;"></div></div>';
             jQuery('.revisionModelBody').html(html);
             jQuery('#revisionModel').modal('show'); 
         }else if(extension == "pdf"){
