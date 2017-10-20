@@ -28,7 +28,7 @@
                 <?= $this->element('header'); ?>    
                 <?= $this->Flash->render() ?>
                 <?= $this->fetch('content'); ?>
-                <?= $this->element('footer'); ?>
+               <!--  <?= $this->element('footer'); ?> -->
             </div>            
         </div>
         <?= $this->element('default_js'); ?>
