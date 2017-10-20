@@ -86,6 +86,9 @@ use Cake\Routing\Router;
         color: white;
     }
 
+    .chat-detail {
+        width: 300px!important;
+    }
 </style>
 <div class="main-content">
     <div class="container-fluid">
@@ -484,84 +487,36 @@ use Cake\Routing\Router;
             <h4 class="card-title"><img src = "<?= SITE_IMAGES_URL . 'communication.png' ?>" width = "50px"><span>Communication</span></h4>
         </div>
         <div class="card-block">
-            <div class="row">
-                <div class="col-md-12">             
-                    <div class="tab-pane" id="communication_tab" role="tabpanel">
-                        <div id="chat" role="tabpanel" class="tab-pane fade in active show" aria-expanded="true">
-                            <div class="chat open">
-                                <div class="chat-user-list scrollable ps-container ps-theme-default ps-active-y" data-ps-id="c114d0fd-1132-892e-9ca8-bf5e4eb13ab3">                                                                                               
-                                <div class="conversation">
-                                    <div class="conversation-wrapper">
-                                        <div class="conversation-header">
-                                            <!-- <a href="javascript:void(0);" class="back chat-toggle">
-                                                <i class="ti-arrow-circle-left"></i>
-                                            </a> -->
-                                            <span>Message</span>
-                                        </div>
-                                        <div class="conversation-body">
-                                            <div class="msg">
-                                                <div class="bubble me">
-                                                    <span>Feeling all right, sir?</span>
-                                                </div>
+            <div class="col-md-12">             
+                <div class="tab-pane" id="communication_tab" role="tabpanel">
+                    <div class="message-page vertion-2">
+                        <div class="row">
+                            <div class="col-xl-12 col-md-12">
+                                <div class="row message-rightbar">
+                                    <div class="col-md-12">                                                
+                                        <div class="discussion_container">
+
+                                        </div>    
+                                        <div class="col-md-12">
+                                            <div class="type-message">
+                                                <input class="chat-input float-xs-left" placeholder="Type a Messages">
+                                                <span class="chat-type float-xs-right">
+                                                    <a href="javascript:void(0);" class="send_chat_data_customer">
+                                                    
+                                                        <button class="btn btn-primary">Send to customer</button>
+                                                    </a>
+                                                    <a href="javascript:void(0);" class="send_chat_data_designer">
+                                                     
+                                                        <button class="btn btn-primary">Send to Designer</button>
+                                                    </a>
+                                                </span>
                                             </div>
-                                            <div class="msg">
-                                                <div class="bubble friend">
-                                                    <span>Just like new</span>
-                                                </div>
-                                            </div>
-                                            <div class="msg">
-                                                <div class="bubble friend">
-                                                    <span>How about you?</span>
-                                                </div>
-                                            </div>
-                                            <div class="msg">
-                                                <div class="bubble me">
-                                                    <span>Right now I feel I could take on the whole Empire myself</span>
-                                                </div>
-                                            </div>
-                                            <div class="msg">
-                                                <div class="bubble friend">
-                                                    <span>All right</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="conversation-footer">
-                                            <button class="upload-btn">
-                                                <i class="ti-camera"></i>
-                                            </button>
-                                            <input class="chat-input" placeholder="Type a message..." type="text">
-                                            <button class="sent-btn">
-                                                <i class="fa fa-send-o"></i>
-                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="message-page vertion-2">
-                            <div class="row">
-                                <div class="col-xl-12 col-md-12">
-                                    <div class="row message-rightbar">
-                                        <div class="row">                                                
-                                            <div class="discussion_container">
-                                                
-                                            </div>    
-                                            <div class="col-md-12">
-                                                <div class="type-message">
-                                                    <input class="chat-input float-xs-left" placeholder="Type a Messages">
-                                                    <span class="chat-type float-xs-right">
-                                                        <a href="javascript:void(0);" class="send_chat_data">
-                                                            <i class="fa fa-paper-plane-o"></i>
-                                                        </a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </div>

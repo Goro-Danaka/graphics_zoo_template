@@ -30,7 +30,14 @@ use Cake\Routing\Router;
 		font-size: 25px;
 		font-weight: bold;
 		margin-bottom: 10px;
+
+		display: block;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		width: 95%;
 	}
+
 	.card-block {
 		padding-bottom: 0px;
 	}
@@ -43,6 +50,18 @@ use Cake\Routing\Router;
     }
     .page-title h4 {
     	font-size: 35px;
+    }
+    .card-des {
+    	display: block;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		display: -webkit-box;
+        -webkit-box-orient: vertical;
+		width: 95%;
+    	-webkit-line-clamp: 2; /* number of lines to show */
+		line-height: 50px;        /* fallback */
+		max-height: 100px;
+		height: 100px;
     }
 </style>
 <div class="main-content">
@@ -105,7 +124,7 @@ use Cake\Routing\Router;
                                 	<div class="card-block" >
                                 		<h4 class="card-title" style="font-size: 36px;"><?= $request->title?></h4>
                                 		<p style="color: <?=$button?>; font-size: 15px;"><?= $status?></p>
-                                		<p><?= $request->description?></p>
+                                		<p class="card-des"><?= $request->description?></p>
                                 	</div>
                                     <div class="card-block">								                                            
                                         <div class="mrg-top-20">

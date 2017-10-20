@@ -12,6 +12,11 @@ use Cake\Routing\Router;
     .side-nav-logo .logo {
         padding: 0px 30px;
     }
+
+    .side-nav-menu {
+        height: auto!important;
+    }
+
     .side-nav-menu li {
         border-bottom: 1px solid RGB(230,236,245);
     }
@@ -74,11 +79,16 @@ use Cake\Routing\Router;
     }
 
     .icon-request {
-        background: url(/img/img/receive.png);
+        background: url(/img/request.png);
     }
 
     .icon-settings {
         background: url(/img/setting.png);        
+    }
+
+    .icon-narrow-right {
+        background: url(/img/narrow_right.png);        
+        float: right;
     }
 
     .icon-holder {
@@ -94,6 +104,27 @@ use Cake\Routing\Router;
 
     .page-title h4 {
         font-size: 28px;
+    }
+
+    .nav-item span {
+        vertical-align: middle;
+    }
+
+    .nav-item .arrow {
+        right: 23px!important;
+    }
+
+    .profile-arrow {
+        position: absolute; 
+        right: 23px!important; 
+        top: 65px;
+        line-height: 40px; 
+        font-size: 10px; 
+        transition: all 0.05s ease-in; 
+        -webkit-transition: all 0.05s ease-in; 
+        -moz-transition: all 0.05s ease-in; 
+        -o-transition: all 0.05s ease-in; 
+        -ms-transition: all 0.05s ease-in;
     }
 </style>
 
@@ -116,14 +147,20 @@ use Cake\Routing\Router;
                 <img class="mrg-top-30" src="<?= SITE_IMAGES_URL . 'designer4.png' ?>" alt="">
                 <h4 class="mrg-top-20 no-mrg-btm text-semibold">Victoria Clayton</h4>
                 <p>UI/UX Designer</p>
+                <span class="profile-arrow">
+                    <i class="ti-angle-right"></i>
+                </span>
             </div>
         </div>
         <ul class="side-nav-menu scrollable">
-            <li class="nav-item active">
+            <li class="nav-item active dropdown">
                 <a class="mrg-top-30" href="<?= Router::url(['controller' => 'Profiles', 'action' => 'dashboard', 'prefix' => 'customer']) ?>">
                     <span class="icon-holder icon-dashboard">
                         </span>
                     <span class="title">Dashboard</span>
+                    <span class="arrow">
+                        <i class="ti-angle-right"></i>
+                    </span>
                 </a>
             </li>
             <li class="nav-item dropdown">
@@ -131,6 +168,9 @@ use Cake\Routing\Router;
                     <span class="icon-holder icon-request">
                         </span>
                     <span class="title">Design Requests</span>
+                    <span class="arrow">
+                        <i class="ti-angle-right"></i>
+                    </span>
                 </a>
             </li>
             <li class="nav-item dropdown">
@@ -138,12 +178,15 @@ use Cake\Routing\Router;
                     <span class="icon-holder icon-settings">
                         </span>
                     <span class="title">Settings</span>
+                    <span class="arrow">
+                        <i class="ti-angle-right"></i>
+                    </span>
                 </a>
             </li>                        
         </ul>
 
 
-        <a href="<?= Router::url(['controller' => 'Settings', 'action' => 'changePassword', 'prefix' => 'customer']);?>"><span style="color:#fff"><button class="btn btn-default" style="background:#ec1c41;border-radius: 16px;width: 158px;margin-top: 80px;margin-left: 40px;">Upgrade</button></span></a>
+        <a href="<?= Router::url(['controller' => 'Settings', 'action' => 'changePassword', 'prefix' => 'customer']);?>"><span style="color:#fff"><button class="btn" style="background:#ec1c41;border-radius: 16px;width: 191px;height:50px;margin-top: 80px;margin-left: 40px;font-size: 20px;color: white;">Upgrade</button></span></a>
     </div>
 </div>
 <!-- Side Nav END -->
