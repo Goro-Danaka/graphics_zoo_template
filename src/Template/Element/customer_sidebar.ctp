@@ -4,128 +4,7 @@ use Cake\Routing\Router;
 ?>
 
 <style type="text/css">
-    .side-nav-logo {
-        background: RGB(229, 31, 68);
-        
-    }
-
-    .side-nav-logo .logo {
-        padding: 0px 30px;
-    }
-
-    .side-nav-menu {
-        height: auto!important;
-    }
-
-    .side-nav-menu li {
-        border-bottom: 1px solid RGB(230,236,245);
-    }
-    .side-nav-inner .nav-item:hover {
-        background-color: RGB(230,236,245);
-    }
-    .side-nav-inner .nav-item span {
-        background-color: white;
-        font-size: 20px;
-        color: black;
-    }
-    .side-nav .side-nav-inner .side-nav-menu > li > a {
-        padding: 0px;
-        margin-top: 20px!important;
-    }
-
-    .side-nav .side-nav-inner ul {
-        padding: 15px 0px!important;
-    }
-
-    .side-nav .side-nav-inner ul > li {
-        padding-left: 20px !important;
-    }
-
-    .side-nav-inner .nav-item span {
-        background-color: transparent;
-    }
-
-    .side-nav-inner .card {
-        border-radius: 0px;
-        border: none;
-        border-right: 1px solid RGB(230,236,245); 
-        margin: 0px;          
-    }
-
-    .widget-profile-1 img {
-        width: 80px;
-        height: 80px;
-        margin-top: 10px!important;
-    }
-
-    .widget-profile-1 h4 {
-        margin-top: 10px!important;
-    }
-
-    .widget-profile-1 p {
-        padding-bottom: 0px;
-    }
-
-    .widget-profile-1 .profile {
-        padding: 0px;
-    }
-
-    textarea.form-control {
-        min-height: 80px!important;
-    }
-
-    .icon-dashboard {
-        background: url(/img/dashboard.png);
-    }
-
-    .icon-request {
-        background: url(/img/request.png);
-    }
-
-    .icon-settings {
-        background: url(/img/setting.png);        
-    }
-
-    .icon-narrow-right {
-        background: url(/img/narrow_right.png);        
-        float: right;
-    }
-
-    .icon-holder {
-        vertical-align:middle;
-        background-size: 100%;
-        background-repeat: no-repeat;        
-    }
-
-    .side-nav-menu .title {
-        color: RGB(20,54,73)!important;
-        font-weight: 400;
-    }
-
-    .page-title h4 {
-        font-size: 28px;
-    }
-
-    .nav-item span {
-        vertical-align: middle;
-    }
-
-    .nav-item .arrow {
-        right: 23px!important;
-    }
-
-    .profile-arrow {
-        position: absolute; 
-        right: 23px!important; 
-        top: 65px;
-        line-height: 40px; 
-        font-size: 10px; 
-        transition: all 0.05s ease-in; 
-        -webkit-transition: all 0.05s ease-in; 
-        -moz-transition: all 0.05s ease-in; 
-        -o-transition: all 0.05s ease-in; 
-        -ms-transition: all 0.05s ease-in;
-    }
+    
 </style>
 
 <div class="side-nav">
@@ -144,8 +23,8 @@ use Cake\Routing\Router;
         </div>
         <div class="widget-profile-1 card">
             <div class="profile border bottom">
-                <img class="mrg-top-30" src="<?= SITE_IMAGES_URL . 'designer4.png' ?>" alt="">
-                <h4 class="mrg-top-20 no-mrg-btm text-semibold">Victoria Clayton</h4>
+                <img src="<?= SITE_IMAGES_URL . 'designer4.png' ?>" alt="">
+                <h4 class="mrg-top-5 no-mrg-btm text-semibold">Victoria Clayton</h4>
                 <p>UI/UX Designer</p>
                 <span class="profile-arrow">
                     <i class="ti-angle-right"></i>
@@ -154,7 +33,7 @@ use Cake\Routing\Router;
         </div>
         <ul class="side-nav-menu scrollable">
             <li class="nav-item active dropdown">
-                <a class="mrg-top-30" href="<?= Router::url(['controller' => 'Profiles', 'action' => 'dashboard', 'prefix' => 'customer']) ?>">
+                <a href="<?= Router::url(['controller' => 'Profiles', 'action' => 'dashboard', 'prefix' => 'customer']) ?>">
                     <span class="icon-holder icon-dashboard">
                         </span>
                     <span class="title">Dashboard</span>
@@ -164,7 +43,7 @@ use Cake\Routing\Router;
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="mrg-top-30" href="<?= Router::url(['controller' => 'Requests', 'action' => 'allRequests', 'prefix' => 'customer']); ?>">
+                <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'allRequests', 'prefix' => 'customer']); ?>">
                     <span class="icon-holder icon-request">
                         </span>
                     <span class="title">Design Requests</span>
@@ -174,7 +53,7 @@ use Cake\Routing\Router;
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="mrg-top-30" href="<?= Router::url(['controller' => 'Settings', 'action' => 'changePassword', 'prefix' => 'customer']); ?>">
+                <a href="<?= Router::url(['controller' => 'Settings', 'action' => 'changePassword', 'prefix' => 'customer']); ?>">
                     <span class="icon-holder icon-settings">
                         </span>
                     <span class="title">Settings</span>
@@ -184,9 +63,7 @@ use Cake\Routing\Router;
                 </a>
             </li>                        
         </ul>
-
-
-        <a href="<?= Router::url(['controller' => 'Settings', 'action' => 'changePassword', 'prefix' => 'customer']);?>"><span style="color:#fff"><button class="btn" style="background:#ec1c41;border-radius: 16px;width: 191px;height:50px;margin-top: 80px;margin-left: 40px;font-size: 20px;color: white;">Upgrade</button></span></a>
+        <div class="col-md-12 mrg-top-15" style="padding: 0 55px;"><button class="btn btn-primary" onclick="window.location.href='/customer/settings/change-password'" style="float:right;margin:1% 2% 0% 0%;color: #fff !important;font-weight: 500;background: #ec1c41;border: 0px;margin-top: 15px;width: 120px;">Upgrade</button></div>
     </div>
 </div>
 <!-- Side Nav END -->

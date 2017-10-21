@@ -56,7 +56,7 @@ use Cake\Routing\Router;
                     <div class="card-block">
                         <div class="mrg-top-10">
                             <div class="row">
-                                <div class="col-md-12 ml-auto mr-auto" style="padding: 0px 25px;">
+                                <div class="col-md-12 ml-auto mr-auto" style="padding: 0px 25px;font-size: 13px;">
                                     <div class="row">
                                         <div class="col-md-2">
                                             <div class="form-group">
