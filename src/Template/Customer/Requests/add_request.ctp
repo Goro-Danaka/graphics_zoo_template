@@ -8,43 +8,7 @@ use Cake\Routing\Router;
 <?= $this->Form->create($request, ['type' => 'file']); ?>
 <?php $this->Form->templates(NOWRAP_TEMPLATE); ?>
 
-<style type="text/css">
-    .page-title {
-        padding: 0 37px;
-    }
-    .card .fa {
-        padding-left: 50px;
-    }
-    .image-upload > input{
-        display: none;
-    }
 
-    .image-upload img {
-        width: 40px;
-    }
-
-    .file-input {
-        border-radius: 7px;
-        border: solid red 2px;
-        padding: 7px 19px;
-        cursor: pointer;
-    }
-
-    .image-upload span {
-        color: red;
-        font-size: 15px;
-        margin-left: 20px;
-    }
-
-    th.action a{
-        margin-left: 20px; 
-        color: #888da8;
-    }
-
-    th.action {
-        text-align: right;
-    }
-</style>
 <div class="main-content">
     <div class="container-fluid">
         <div class="page-title">
@@ -168,7 +132,7 @@ use Cake\Routing\Router;
                                     <div class="row">
                                         <div class="col-md-2">
                                             <div class="form-group">
-                                                <label>Attach Helpful Images</label>
+                                                <label>Attachments</label>
                                             </div>
                                         </div>
                                         <div class="col-md-10">
@@ -184,7 +148,7 @@ use Cake\Routing\Router;
                                                                 </label>
                                                                 <?= $this->Form->control('file[]', ['type' => 'file', 'id' => 'upload_file', 'label' => FALSE]) ?>
                                                             </div>
-                                                           <table class="table">
+                                                           <table class="table add_request_table">
                                                                 <thead>
                                                                     <tr>
                                                                         <th width="50%">Document Name</th>
@@ -205,10 +169,8 @@ use Cake\Routing\Router;
                                     <div class="row">
                                         <div class="col-md-10">
                                             <div class="form-group" style = "text-align: center;">
-                                                <?= $this->Form->button('+ Add Request', ['type' => 'submit', 'class' => 'btn btn-success','style'=>'border: #f83a5b;background: RGB(13,48,68);height: 50px;border-radius: 10px;']) ?>                                          
-                                                <a href="<?= \Cake\Routing\Router::url(['controller' => 'Requests', 'action' => 'allRequests'], TRUE)?>">
-                                                    <?= $this->Form->button('Cancel', ['type' => 'button', 'class' => 'btn btn-success','style'=>'border-radius: 10px;border: #f83a5b;height: 50px;background: transparent;width: 127px;color: red;font-size: 17px;font-weight: bold;']) ?>
-                                                </a>
+                                                <?= $this->Form->button('+ Add Request', ['type' => 'submit', 'class' => 'btn btn-success','style'=>'border: #f83a5b;background: RGB(13,48,68);height: 44px;border-radius: 8px;']) ?>
+                                                <button class = "btn" style="border-radius: 8px;border: #f83a5b;height: 44px;background: transparent;width: 127px;color: red;font-size: 14px;font-weight: bold;"><?=CLOSE_ICON?>&nbsp;&nbsp;&nbsp;Cancel</button>
                                             </div>
                                         </div>
                                     </div>   
@@ -292,7 +254,7 @@ use Cake\Routing\Router;
                             console.log(res['id']);
                             var attachment_path = arr[0] + "//" + arr[1] + arr[2] + "/uploads/requests/-1/" + res;
                             var extension = attachment_path.split(".")[attachment_path.split(".").length-1];
-                            var html = "<tr><th>" + res + "</th><th>" + size + "KB</th><th class='action'><a href='#' class='openfile' data-path='" + attachment_path + "' data-extension= '" + extension + "'><?=VIEW_ICON?>&nbsp;&nbsp;&nbsp;View</a><a href=" + attachment_path + " download = ''><?=DOWNLOAD_ICON?>&nbsp;&nbsp;&nbsp;Download</a><a href='#' class='deletefile' ><?=CLOSE_ICON?></a></th></tr>";
+                            var html = "<tr><th>" + res + "</th><th>" + size + "KB</th><th class='action'><a href='#' class='openfile' data-path='" + attachment_path + "' data-extension= '" + extension + "'><?=VIEW_SMALL_ICON?>&nbsp;&nbsp;&nbsp;View</a><a href=" + attachment_path + " download = ''><?=DOWNLOAD_SMALL_ICON?>&nbsp;&nbsp;&nbsp;Download</a><a href='#' class='deletefile' ><?=CLOSE_SMALL_ICON?></a></th></tr>";
                             $('table tbody').append(html);
 
                         }

@@ -19,58 +19,14 @@ use Cake\Routing\Router;
 		
 </section> -->
 
-<style type="text/css">
-	th, tr {
-		text-align: center;
-	}
-	.btn-default {
-		color: #515365!important;
-	}
-	.card-title {
-		font-size: 25px;
-		font-weight: bold;
-		margin-bottom: 10px;
 
-		display: block;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
-		width: 95%;
-	}
-
-	.card-block {
-		padding-bottom: 0px;
-	}
-	.card-footer {
-		padding-top: 20px!important;
-		padding-bottom: 20px!important;
-	}
-    .page-title {
-        padding: 0 39px;
-    }
-    .page-title h4 {
-    	font-size: 35px;
-    }
-    .card-des {
-    	display: block;
-		text-overflow: ellipsis;
-		overflow: hidden;
-		display: -webkit-box;
-        -webkit-box-orient: vertical;
-		width: 95%;
-    	-webkit-line-clamp: 2; /* number of lines to show */
-		line-height: 50px;        /* fallback */
-		max-height: 100px;
-		height: 100px;
-    }
-</style>
 <div class="main-content">
     <div class="container-fluid">
         <div class="page-title">
             <h4>All Running Requests</h4>
         </div>
         <div class="card" style="background-color: transparent;border: none;">
-            <div class="padding-20">
+            <div class="padding-10">
 
                 <div class="table-overflow">	                                            
 
@@ -119,64 +75,64 @@ use Cake\Routing\Router;
 						//echo $request->status;
 					?>
 
-                            <div class="col-lg-4 col-md-6 col-xs-12">
-                                <div class="card" style="font-size: 19px;border: 3px solid #e6ecf5;">
-                                	<div class="card-block" >
-                                		<h6 class="card-title" style="font-size: 36px;"><?= $request->title?></h6>
-                                		<p style="color: <?=$button?>; font-size: 15px;"><?= $status?></p>
+                            <div class="col-lg-4 col-md-6 col-xs-12 all-requests-item">
+                                <div class="card" style="font-size: 19px;border: 1px solid #e6ecf5;">
+                                	<div class="card-block card-item-header" >
+                                		<h6 class="card-title"><?= $request->title?></h6>
+                                		<p class="card-status" style="color: <?=$button?>;"><?= $status?></p>
                                 		<p class="card-des"><?= $request->description?></p>
                                 	</div>
-                                    <div class="card-block">								                                            
-                                        <div class="mrg-top-20">
+                                    <div class="card-block card-date">								                                            
+                                        <div class="mrg-top-15">
                                         	<div class = "row">
-                                            	<div class="col-md-6">
+                                            	<div class="col-md-7">
                                             		Due Requested:
                                             	</div>
-                                                <div class="col-md-6 text-right">
+                                                <div class="col-md-5 text-right">
                                                 	<?php echo $due_date; ?>
                                             	</div>								                                                
                                             </div>
                                         </div>
-                                        <div class="mrg-top-20">
+                                        <div class="mrg-top-15">
                                         	<div class = "row">
-                                            	<div class="col-md-6">
+                                            	<div class="col-md-7">
                                             		Date In Progress:
                                             	</div>
-                                                <div class="col-md-6 text-right">
+                                                <div class="col-md-5 text-right">
                                                 	<?= ($request->dateinprogress) ? date('m/d/Y',strtotime($request->dateinprogress)) : ''; ?>
                                                 	<!-- <?= ($request->dateinprogress) ? date('g:i a',strtotime($request->dateinprogress)) : ''; ?> -->
                                             	</div>								                                                
                                             </div>
                                         </div>
-                                        <div class="mrg-top-20">
+                                        <div class="mrg-top-15">
                                         	<div class = "row">
-                                            	<div class="col-md-6">
+                                            	<div class="col-md-7">
                                             		Due Date:
                                             	</div>
-                                                <div class="col-md-6 text-right">
+                                                <div class="col-md-5 text-right">
                                                 	<?php echo $due_date; ?>
                                             	</div>								                                                
                                             </div>
                                         </div>								                                            
-                                        <div class="mrg-top-20">
+                                        <div class="mrg-top-15">
                                         	<div class = "row">
-                                            	<div class="col-md-6">
-                                            		<p>Messages:</p>
+                                            	<div class="col-md-7">
+                                            		Messages:
                                             	</div>
-                                                <div class="col-md-6 text-right">
+                                                <div class="col-md-5 text-right">
                                                 	<?php echo $due_date; ?>
                                             	</div>								                                                
                                             </div>
                                         </div>								                                            
                                     </div>
-                                    <div class="card-footer border top" style="text-align: center;">
-                                        <div class="col-md-6">
-                                            <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    
-											 	<button class="btn btn-primary" style="font-weight: bold;font-size: 17px;border-radius:0px;background:  RGB(53,63,83);border: none;"><?= REVIEW_ICON ?><span style="vertical-align: middle;margin-left: 10px;"><?= $view ?></span></button> 
-		                                    </a>
+                                    <div class="card-footer border top mrg-top-25" style="text-align: center;">
+                                        <div class="col-md-6 text-right">
+                                            <button class="btn btn-primary" onclick="window.location.href='<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>'" style="font-weight: bold;font-size: 13px;border-radius:3px;background:  RGB(53,63,83);border: none;"><?= REVIEW_ICON ?><span style="vertical-align: middle;margin-left: 5px;"><?= $view ?></span></button> 
+                                            <!-- <a href="<?= Router::url(['controller' => 'Requests', 'action' => 'viewRunningRequest', $request->id]); ?>">                    											 	
+		                                    </a> -->
 		                                </div>
-		                                <div class="col-md-6">
-                                            <?= $this->Form->postLink('<button class="btn btn-danger" style="font-weight: bold;font-size: 17px;border: none;border-radius:0px;background: #fff; color:red;"><img src="' . SITE_IMAGES_URL . 'close_button.png" style="width:20px;height:20px;"><span style="vertical-align: middle;margin-left: 10px;">Cancel</span></button>', Router::url(['controller' => 'Requests', 'action' => 'cancleRequest', $request->id], TRUE), ['confirm' => 'Are you sure you want to cancle this request?', 'escape' => FALSE]); ?>								                                                
+		                                <div class="col-md-6 text-left">
+                                            <button class="btn btn-primary" onclick="window.location.href='<?= Router::url(['controller' => 'Requests', 'action' => 'cancleRequest', $request->id], TRUE); ?>'" style="font-weight: bold;font-size: 13px;border: none;border-radius:3px;background: #fff; color:red;"><?=CLOSE_ICON?><span style="vertical-align: middle;margin-left: 5px;">Cancel</span></button> 
                                         </div>
                                     </div>
                                 </div>

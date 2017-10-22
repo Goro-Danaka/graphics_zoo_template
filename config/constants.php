@@ -44,6 +44,10 @@ define('CLOSE_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "close_b
 define('REVIEW_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "eye_white.png' style = 'height:16px;width:23px;'>");
 define('RED_VIEW_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "eye_red.png' style = 'height:16px;width:23px;'>");
 
+define('VIEW_SMALL_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "eye_gray.png' style = 'height:12px;width:16px;'>");
+define('DOWNLOAD_SMALL_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "download_small.png' style = 'height:14px;width:14px;'>");
+define('CLOSE_SMALL_ICON', "<img src = '" . Router::url('/', TRUE) . "img/" . "close_button.png' style = 'height:10px;width:10px;'>");
+
 const LOGIN_CHECK = TRUE;
 const LOG_ENABLED = TRUE;
 
